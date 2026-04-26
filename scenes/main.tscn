@@ -1,44 +1,74 @@
 [gd_scene format=3 uid="uid://1xup5uvpt4eq"]
 
+[ext_resource type="Texture2D" uid="uid://bt17sw5xxqpp0" path="res://assets/images/computer screen.png" id="1_o5qli"]
+
 [node name="main" type="Control" unique_id=1379461960]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="." unique_id=498623482]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=167584142]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o5qli")
+expand_mode = 1
+
+[node name="ScreenArea" type="Control" parent="." unique_id=927370305]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 251.0
+offset_top = 101.0
+offset_right = -230.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenArea" unique_id=167584142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1209373673]
+[node name="TitleLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=1209373673]
 layout_mode = 2
 text = "GreenCio"
 
-[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=912490889]
+[node name="DescriptionLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=912490889]
 layout_mode = 2
 text = "Your first CIO decision will appear here"
 
-[node name="ChoiceButton" type="Button" parent="VBoxContainer" unique_id=329043391]
+[node name="ChoiceButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=329043391]
 layout_mode = 2
 text = "Choice 1"
 metadata/_edit_group_ = true
 
-[node name="ChoiceButton2" type="Button" parent="VBoxContainer" unique_id=928083681]
+[node name="ChoiceButton2" type="Button" parent="ScreenArea/VBoxContainer" unique_id=928083681]
 layout_mode = 2
 text = "Choice 2"
 
-[node name="ChoiceButton3" type="Button" parent="VBoxContainer" unique_id=1347375987]
+[node name="ChoiceButton3" type="Button" parent="ScreenArea/VBoxContainer" unique_id=1347375987]
 layout_mode = 2
 text = "Choice 3"
 
-[node name="FeedbackLabel" type="Label" parent="VBoxContainer" unique_id=261585020]
+[node name="FeedbackLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=261585020]
 layout_mode = 2
 
-[node name="NextButton" type="Button" parent="VBoxContainer" unique_id=515475864]
+[node name="NextButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=515475864]
 layout_mode = 2
 text = "Next"
