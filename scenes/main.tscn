@@ -11,21 +11,28 @@ offset_bottom = 40.0
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1209373673]
 layout_mode = 2
+text = "GreenCio"
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=912490889]
 layout_mode = 2
+text = "Your first CIO decision will appear here"
 
 [node name="ChoiceButton" type="Button" parent="VBoxContainer" unique_id=329043391]
 layout_mode = 2
+text = "Choice 1"
+metadata/_edit_group_ = true
 
 [node name="ChoiceButton2" type="Button" parent="VBoxContainer" unique_id=928083681]
 layout_mode = 2
+text = "Choice 2"
 
 [node name="ChoiceButton3" type="Button" parent="VBoxContainer" unique_id=1347375987]
 layout_mode = 2
+text = "Choice 3"
 
 [node name="FeedbackLabel" type="Label" parent="VBoxContainer" unique_id=261585020]
 layout_mode = 2
 
 [node name="NextButton" type="Button" parent="VBoxContainer" unique_id=515475864]
 layout_mode = 2
+text = "Next"
