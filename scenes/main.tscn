@@ -4,6 +4,11 @@
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Background" type="TextureRect" parent="." unique_id=498623482]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=167584142]
 layout_mode = 1
 offset_right = 40.0
