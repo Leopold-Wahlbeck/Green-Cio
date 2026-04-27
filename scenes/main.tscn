@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://1xup5uvpt4eq"]
+[gd_scene format=3 uid="uid://1xup5uvpt4eq" load_steps=3]
 
-[ext_resource type="Texture2D" uid="uid://bt17sw5xxqpp0" path="res://assets/images/computer screen.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://bt17sw5xxqpp0" path="res://assets/images/computer_screen.png" id="1_qq111"]
+[ext_resource type="Script" path="res://scripts/Main.gd" id="2_f78ej"]
 
 [node name="main" type="Control" unique_id=1379461960]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_f78ej")
 
 [node name="Background" type="TextureRect" parent="." unique_id=498623482]
 layout_mode = 1
@@ -17,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_o5qli")
+texture = ExtResource("1_qq111")
 expand_mode = 1
 
 [node name="ScreenArea" type="Control" parent="." unique_id=927370305]
@@ -49,14 +51,34 @@ theme_override_constants/separation = 12
 layout_mode = 2
 text = "GreenCio"
 
+[node name="CategoryLabel" type="Label" parent="ScreenArea/VBoxContainer"]
+layout_mode = 2
+text = "Category"
+
+[node name="RoundLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=204298405]
+layout_mode = 2
+text = "Question 1"
+
+[node name="ScoresRow" type="HBoxContainer" parent="ScreenArea/VBoxContainer" unique_id=118677095]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="EnvironmentScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=824594052]
+layout_mode = 2
+text = "Environment: 50"
+
+[node name="MoneyScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=114854838]
+layout_mode = 2
+text = "Budget: 50"
+
 [node name="DescriptionLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=912490889]
 layout_mode = 2
-text = "Your first CIO decision will appear here"
+text = "Your first decision will appear here."
+autowrap_mode = 3
 
 [node name="ChoiceButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=329043391]
 layout_mode = 2
 text = "Choice 1"
-metadata/_edit_group_ = true
 
 [node name="ChoiceButton2" type="Button" parent="ScreenArea/VBoxContainer" unique_id=928083681]
 layout_mode = 2
@@ -68,7 +90,9 @@ text = "Choice 3"
 
 [node name="FeedbackLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=261585020]
 layout_mode = 2
+autowrap_mode = 3
 
 [node name="NextButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=515475864]
 layout_mode = 2
 text = "Next"
+visible = false
