@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameState="*res://scripts/GameState.gd"
 
+[dotnet]
+
+project/assembly_name="Green Cio"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

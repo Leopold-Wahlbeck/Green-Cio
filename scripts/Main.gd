@@ -3,6 +3,7 @@ extends Control
 const QUESTIONS_PATH := "res://data/questions.json"
 
 @onready var title_label: Label = $ScreenArea/VBoxContainer/TitleLabel
+@onready var category_label: Label = $ScreenArea/VBoxContainer/CategoryLabel
 @onready var round_label: Label = $ScreenArea/VBoxContainer/RoundLabel
 @onready var environment_score_label: Label = $ScreenArea/VBoxContainer/ScoresRow/EnvironmentScoreLabel
 @onready var money_score_label: Label = $ScreenArea/VBoxContainer/ScoresRow/MoneyScoreLabel
@@ -93,6 +94,7 @@ func load_next_question() -> void:
 
 func display_question(question: Dictionary) -> void:
 	title_label.text = str(question.get("title", "Question"))
+	category_label.text = "Category: %s" % question.get("category", "General")
 	round_label.text = "Question %d / %d" % [GameState.round_number + 1, GameState.max_rounds]
 	description_label.text = str(question.get("question", ""))
 	feedback_label.text = ""

@@ -51,6 +51,10 @@ theme_override_constants/separation = 12
 layout_mode = 2
 text = "GreenCio"
 
+[node name="CategoryLabel" type="Label" parent="ScreenArea/VBoxContainer"]
+layout_mode = 2
+text = "Category"
+
 [node name="RoundLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=204298405]
 layout_mode = 2
 text = "Question 1"
