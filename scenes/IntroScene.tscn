@@ -9,6 +9,14 @@
 font = ExtResource("2_3uwhn")
 font_size = 40
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tor5"]
+bg_color = Color(0.4512772, 0.6725298, 0.3175374, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8590401, 0.82613134, 3.85046e-07, 1)
+
 [node name="IntroScene" type="Control" unique_id=1038385812]
 layout_mode = 3
 anchors_preset = 0
@@ -50,6 +58,10 @@ offset_left = 705.0
 offset_top = -51.0
 offset_right = 1105.0
 offset_bottom = 29.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_3uwhn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6tor5")
 text = "NEXT"
 
 [node name="SpeechBouble" type="TextureRect" parent="." unique_id=1093009902]
