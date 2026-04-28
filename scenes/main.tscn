@@ -1,7 +1,18 @@
-[gd_scene format=3 uid="uid://1xup5uvpt4eq" load_steps=3]
+[gd_scene format=3 uid="uid://1xup5uvpt4eq" load_steps=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/main_background.png" id="2_intro"]
 [ext_resource type="Script" path="res://scripts/Main.gd" id="3_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
+bg_color = Color(0.96, 0.97, 0.94, 0.92)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
 
 [node name="main" type="Control" unique_id=1379461960]
 layout_mode = 3
@@ -21,6 +32,45 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_intro")
 expand_mode = 1
+
+[node name="TopScorePanel" type="PanelContainer" parent="." unique_id=579007042]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 18.0
+offset_right = 230.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_score_panel")
+
+[node name="ScoreRow" type="HBoxContainer" parent="TopScorePanel" unique_id=698115447]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="EnvironmentIcon" type="Label" parent="TopScorePanel/ScoreRow" unique_id=133431911]
+layout_mode = 2
+text = "🍃"
+theme_override_font_sizes/font_size = 22
+
+[node name="EnvironmentValueLabel" type="Label" parent="TopScorePanel/ScoreRow" unique_id=93771211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.14, 0.16, 1)
+theme_override_font_sizes/font_size = 20
+text = "Environment 50"
+
+[node name="BudgetIcon" type="Label" parent="TopScorePanel/ScoreRow" unique_id=403381028]
+layout_mode = 2
+text = "🪙"
+theme_override_font_sizes/font_size = 22
+
+[node name="BudgetValueLabel" type="Label" parent="TopScorePanel/ScoreRow" unique_id=715747802]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.14, 0.16, 1)
+theme_override_font_sizes/font_size = 20
+text = "Budget 50"
 
 [node name="IntroLayer" type="Control" parent="." unique_id=574290131]
 layout_mode = 1
@@ -110,22 +160,6 @@ theme_override_font_sizes/font_size = 18
 [node name="RoundLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=204298405]
 layout_mode = 2
 text = "Question 1"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-
-[node name="ScoresRow" type="HBoxContainer" parent="ScreenArea/VBoxContainer" unique_id=118677095]
-layout_mode = 2
-theme_override_constants/separation = 18
-
-[node name="EnvironmentScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=824594052]
-layout_mode = 2
-text = "Environment: 50"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-
-[node name="MoneyScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=114854838]
-layout_mode = 2
-text = "Budget: 50"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 

@@ -7,6 +7,7 @@ var economy_score := 50
 var round_number := 0
 var max_rounds := 5
 
+
 func configure(initial_environment: int, initial_economy: int, total_rounds: int) -> void:
 	initial_environment_score = initial_environment
 	initial_economy_score = initial_economy
@@ -29,3 +30,19 @@ func get_balance_score() -> int:
 	var average = (environment_score + economy_score) / 2
 	var penalty = abs(environment_score - economy_score)
 	return clamp(average - penalty, 0, 100)
+
+
+func get_snapshot() -> Dictionary:
+	return {
+		"environment_score": environment_score,
+		"economy_score": economy_score,
+		"round_number": round_number,
+		"max_rounds": max_rounds,
+	}
+
+
+func restore_snapshot(snapshot: Dictionary) -> void:
+	environment_score = int(snapshot.get("environment_score", initial_environment_score))
+	economy_score = int(snapshot.get("economy_score", initial_economy_score))
+	round_number = int(snapshot.get("round_number", 0))
+	max_rounds = int(snapshot.get("max_rounds", max_rounds))

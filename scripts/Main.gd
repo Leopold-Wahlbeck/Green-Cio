@@ -12,14 +12,14 @@ const INTRO_HOTSPOTS := {
 const QUESTION_SCREEN_RECT := Rect2(0.055, 0.05, 0.889, 0.744)
 
 @onready var background: TextureRect = $Background
+@onready var environment_value_label: Label = $TopScorePanel/ScoreRow/EnvironmentValueLabel
+@onready var budget_value_label: Label = $TopScorePanel/ScoreRow/BudgetValueLabel
 @onready var intro_layer: Control = $IntroLayer
 @onready var screen_area: Control = $ScreenArea
 @onready var back_button: Button = $ScreenArea/VBoxContainer/BackButton
 @onready var title_label: Label = $ScreenArea/VBoxContainer/TitleLabel
 @onready var category_label: Label = $ScreenArea/VBoxContainer/CategoryLabel
 @onready var round_label: Label = $ScreenArea/VBoxContainer/RoundLabel
-@onready var environment_score_label: Label = $ScreenArea/VBoxContainer/ScoresRow/EnvironmentScoreLabel
-@onready var money_score_label: Label = $ScreenArea/VBoxContainer/ScoresRow/MoneyScoreLabel
 @onready var description_label: Label = $ScreenArea/VBoxContainer/DescriptionLabel
 @onready var choice_buttons: Array[Button] = [
 	$ScreenArea/VBoxContainer/ChoiceButton,
@@ -43,6 +43,8 @@ var remaining_questions: Array[Dictionary] = []
 var pending_triggered_questions: Array[Dictionary] = []
 var current_question: Dictionary = {}
 var selected_category := ""
+var category_sessions := {}
+var is_showing_end_screen := false
 
 
 func _ready() -> void:
@@ -59,6 +61,7 @@ func _ready() -> void:
 	next_button.pressed.connect(_on_next_button_pressed)
 	resized.connect(_update_background_layout)
 	load_questions()
+	update_score_labels()
 	show_intro_screen()
 
 
@@ -95,13 +98,18 @@ func load_questions() -> void:
 
 
 func show_intro_screen() -> void:
+	if not selected_category.is_empty():
+		save_current_session()
+
 	selected_category = ""
 	current_question = {}
+	is_showing_end_screen = false
 	feedback_label.text = ""
 	next_button.visible = false
 	background.texture = INTRO_BACKGROUND
 	intro_layer.visible = true
 	screen_area.visible = false
+	update_score_labels()
 	_update_background_layout()
 
 
@@ -119,12 +127,16 @@ func start_category_game(category_name: String) -> void:
 	screen_area.visible = true
 	_update_background_layout()
 
+	if restore_category_session(category_name):
+		return
+
 	GameState.reset_game()
 	remaining_questions = base_questions.duplicate(true)
 	pending_triggered_questions = triggered_questions.duplicate(true)
 	remaining_questions.shuffle()
 	GameState.max_rounds = remaining_questions.size()
 	current_question = {}
+	is_showing_end_screen = false
 	feedback_label.text = ""
 	next_button.visible = false
 	next_button.text = "Next"
@@ -146,8 +158,10 @@ func load_next_question() -> void:
 		return
 
 	current_question = remaining_questions.pop_front()
+	is_showing_end_screen = false
 	display_question(current_question)
 	update_score_labels()
+	save_current_session()
 
 
 func display_question(question: Dictionary) -> void:
@@ -168,6 +182,8 @@ func display_question(question: Dictionary) -> void:
 			button.text = "%s. %s" % [choice.get("id", ""), choice.get("text", "")]
 		else:
 			button.visible = false
+
+	back_button.visible = true
 
 
 func _on_choice_pressed(index: int) -> void:
@@ -199,6 +215,7 @@ func _on_choice_pressed(index: int) -> void:
 
 	next_button.text = "View results" if remaining_questions.is_empty() else "Next"
 	next_button.visible = true
+	save_current_session()
 
 
 func unlock_triggered_questions(answered_question: Dictionary, selected_choice: Dictionary) -> void:
@@ -219,12 +236,13 @@ func unlock_triggered_questions(answered_question: Dictionary, selected_choice: 
 
 
 func update_score_labels() -> void:
-	environment_score_label.text = "Environment: %d" % GameState.environment_score
-	money_score_label.text = "Budget: %d" % GameState.economy_score
+	environment_value_label.text = "Environment %d" % GameState.environment_score
+	budget_value_label.text = "Budget %d" % GameState.economy_score
 
 
 func show_end_screen() -> void:
 	current_question = {}
+	is_showing_end_screen = true
 	title_label.text = "%s complete" % selected_category
 	category_label.text = "Category: %s" % selected_category
 	round_label.text = "Final score"
@@ -236,15 +254,18 @@ func show_end_screen() -> void:
 	feedback_label.text = "The balance score rewards choices that protect both dimensions."
 	for button in choice_buttons:
 		button.visible = false
+	back_button.visible = true
 	next_button.text = "Replay category"
 	next_button.visible = true
 	update_score_labels()
+	save_current_session()
 
 
 func show_loading_error(message: String) -> void:
 	background.texture = QUESTION_BACKGROUND
 	intro_layer.visible = false
 	screen_area.visible = true
+	is_showing_end_screen = false
 	_update_background_layout()
 	title_label.text = "Error"
 	category_label.text = ""
@@ -253,13 +274,19 @@ func show_loading_error(message: String) -> void:
 	feedback_label.text = "Check the file %s." % QUESTIONS_PATH
 	for button in choice_buttons:
 		button.visible = false
+	back_button.visible = true
 	next_button.visible = false
+	update_score_labels()
 
 
 func _on_next_button_pressed() -> void:
 	if current_question.is_empty():
 		if selected_category.is_empty():
 			show_intro_screen()
+			return
+		if is_showing_end_screen:
+			category_sessions.erase(selected_category)
+			start_category_game(selected_category)
 			return
 		start_category_game(selected_category)
 		return
@@ -320,6 +347,65 @@ func _update_question_screen_area() -> void:
 		image_rect.size.x * QUESTION_SCREEN_RECT.size.x,
 		image_rect.size.y * QUESTION_SCREEN_RECT.size.y
 	)
+
+
+func save_current_session() -> void:
+	if selected_category.is_empty():
+		return
+
+	category_sessions[selected_category] = {
+		"game_state": GameState.get_snapshot(),
+		"remaining_questions": remaining_questions.duplicate(true),
+		"pending_triggered_questions": pending_triggered_questions.duplicate(true),
+		"current_question": current_question.duplicate(true),
+		"feedback_text": feedback_label.text,
+		"next_visible": next_button.visible,
+		"next_text": next_button.text,
+		"buttons_locked": are_choice_buttons_locked(),
+		"is_showing_end_screen": is_showing_end_screen,
+	}
+
+
+func restore_category_session(category_name: String) -> bool:
+	if not category_sessions.has(category_name):
+		return false
+
+	var session: Dictionary = category_sessions[category_name]
+	GameState.restore_snapshot(session.get("game_state", {}))
+	remaining_questions = session.get("remaining_questions", []).duplicate(true)
+	pending_triggered_questions = session.get("pending_triggered_questions", []).duplicate(true)
+	current_question = session.get("current_question", {}).duplicate(true)
+	feedback_label.text = str(session.get("feedback_text", ""))
+	next_button.visible = bool(session.get("next_visible", false))
+	next_button.text = str(session.get("next_text", "Next"))
+	is_showing_end_screen = bool(session.get("is_showing_end_screen", false))
+	update_score_labels()
+
+	if is_showing_end_screen:
+		show_end_screen()
+		return true
+
+	if current_question.is_empty():
+		load_next_question()
+		return true
+
+	display_question(current_question)
+	feedback_label.text = str(session.get("feedback_text", ""))
+	next_button.visible = bool(session.get("next_visible", false))
+	next_button.text = str(session.get("next_text", "Next"))
+
+	if bool(session.get("buttons_locked", false)):
+		for button in choice_buttons:
+			button.disabled = true
+
+	return true
+
+
+func are_choice_buttons_locked() -> bool:
+	for button in choice_buttons:
+		if button.visible and button.disabled:
+			return true
+	return false
 
 
 func get_displayed_image_rect(texture_size: Vector2, available_size: Vector2) -> Rect2:
