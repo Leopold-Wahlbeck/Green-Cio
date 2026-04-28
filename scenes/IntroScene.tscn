@@ -53,11 +53,16 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="NextButton" type="Button" parent="DialogueBox" unique_id=1935556165]
-layout_mode = 0
-offset_left = 705.0
-offset_top = -51.0
-offset_right = 1105.0
-offset_bottom = 29.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = -0.055000003
+anchor_right = 0.497
+anchor_bottom = -0.055000003
+offset_left = -199.54004
+offset_top = -40.0
+offset_right = 200.45996
+offset_bottom = 40.0
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_3uwhn")
 theme_override_font_sizes/font_size = 50
