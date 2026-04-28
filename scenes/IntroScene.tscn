@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b05txtfqtv7d0"]
 
+[ext_resource type="Script" uid="uid://b5xxjygfpe33g" path="res://scripts/introscript.gd" id="1_6tor5"]
 [ext_resource type="Texture2D" uid="uid://cjy2527isxebq" path="res://assets/images/introscenebackground.png" id="1_g6t57"]
 [ext_resource type="FontFile" uid="uid://c042li8xx2r6" path="res://assets/fonts/Minecraft.ttf" id="2_3uwhn"]
 [ext_resource type="Texture2D" uid="uid://5jt2icbd1mnt" path="res://assets/images/chatbouble.png" id="3_6tor5"]
@@ -8,9 +9,13 @@
 font = ExtResource("2_3uwhn")
 font_size = 40
 
-[node name="IntroScene" type="Node2D" unique_id=3720741]
+[node name="IntroScene" type="Control" unique_id=1038385812]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6tor5")
 
 [node name="CharacterImage" type="TextureRect" parent="." unique_id=571855047]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_g6t57")
@@ -18,6 +23,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1263295055]
+layout_mode = 0
 offset_left = 50.0
 offset_top = 880.0
 offset_right = 1870.0
@@ -30,22 +36,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Welcome… We are soooo glad you applied for the CIO position at Company Incorporated. 
+"
 label_settings = SubResource("LabelSettings_nx802")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="NextButton" type="Button" parent="." unique_id=211369252]
-visible = false
-offset_left = -2.0
-offset_top = 24.0
-offset_right = 43.0
-offset_bottom = 55.0
-text = "Next"
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=1935556165]
+layout_mode = 0
+offset_left = 705.0
+offset_top = -51.0
+offset_right = 1105.0
+offset_bottom = 29.0
+text = "NEXT"
 
 [node name="SpeechBouble" type="TextureRect" parent="." unique_id=1093009902]
 visible = false
+layout_mode = 0
 offset_left = 9.0
 offset_top = 9.0
 offset_right = 31.5
