@@ -1,1290 +1,1341 @@
 {
   "initial_scores": {
-    "environment": 50,
-    "money": 50
+	"environment": 50,
+	"money": 50
   },
   "score_bounds": {
-    "min": 0,
-    "max": 100
+	"min": 0,
+	"max": 100
   },
   "questions": [
-    {
-      "id": 1,
-      "category": "Operations",
-      "title": "Packaging waste",
-      "question": "Customers complain about packaging waste. What should your company do?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Use cheaper plastic packaging",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Switch to recyclable materials",
-          "impact": {
-            "environment": 10,
-            "money": -5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use minimal packaging",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "category": "IT",
-      "title": "Cloud provider choice",
-      "question": "You need to choose a cloud provider for a new application.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Choose the cheapest option",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Choose a provider that uses renewable energy",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Choose a local provider to keep data in your country",
-          "impact": {
-            "environment": 0,
-            "money": -3
-          }
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "category": "Operations",
-      "title": "Factory location",
-      "question": "Your company needs to choose where to produce its products. You must decide between different factory locations.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Open a factory in France",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Open a factory in China",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use a factory in Eastern Europe",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "category": "IT",
-      "title": "AI delivery planning",
-      "question": "You want to use AI to improve delivery planning. You must decide where to run the system.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Use a cloud-based AI service",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Run the AI locally on your own servers",
-          "impact": {
-            "environment": 10,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use a mix of both",
-          "impact": {
-            "environment": 0,
-            "money": -5
-          }
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "category": "Operations",
-      "title": "Goods transport",
-      "question": "You need to organize how goods are transported between warehouses.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Use trucks only",
-          "impact": {
-            "environment": -15,
-            "money": 0
-          }
-        },
-        {
-          "id": "B",
-          "text": "Use trains when possible",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Combine trucks and trains",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "category": "IT",
-      "title": "Data center cooling strategy",
-      "question": "Your data center consumes a lot of energy and produces significant heat. Which cooling strategy should you choose?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Traditional air cooling",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Liquid cooling system",
-          "impact": {
-            "environment": 10,
-            "money": -5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Liquid cooling system with waste heat recovery for the city",
-          "impact": {
-            "environment": 20,
-            "money": -15
-          }
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "category": "IT",
-      "title": "IT infrastructure expansion",
-      "question": "You need to expand your IT infrastructure.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Build your own data center",
-          "impact": {
-            "environment": -15,
-            "money": -15
-          }
-        },
-        {
-          "id": "B",
-          "text": "Use a large cloud provider",
-          "impact": {
-            "environment": 0,
-            "money": -5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use a smaller local provider",
-          "impact": {
-            "environment": 5,
-            "money": -3
-          }
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "category": "HR",
-      "title": "Employee work policy",
-      "question": "You need to define the company work policy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Full-time office work",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Hybrid work, 2 to 3 days remote",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Fully remote work",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "category": "IT",
-      "title": "Office hardware replacement",
-      "question": "You need to replace office hardware.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Buy new high-performance devices",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Buy energy-efficient certified devices",
-          "impact": {
-            "environment": 10,
-            "money": -5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Buy refurbished devices",
-          "impact": {
-            "environment": 20,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "category": "Operations",
-      "title": "Energy supplier",
-      "question": "Your company must choose an energy supplier.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Choose the cheapest energy provider",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Choose a renewable energy provider",
-          "impact": {
-            "environment": 20,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Choose a mixed energy provider",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "category": "IT",
-      "title": "Cybersecurity investment",
-      "question": "You need to decide how much to invest in cybersecurity.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Minimal security",
-          "impact": {
-            "environment": 5,
-            "money": 10
-          },
-          "flags": {
-            "cyberattack_risk": "high"
-          }
-        },
-        {
-          "id": "B",
-          "text": "Standard security",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          },
-          "flags": {
-            "cyberattack_risk": "medium"
-          }
-        },
-        {
-          "id": "C",
-          "text": "Advanced security",
-          "impact": {
-            "environment": -10,
-            "money": -10
-          },
-          "flags": {
-            "cyberattack_risk": "low"
-          }
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "category": "IT",
-      "title": "Cyberattack response",
-      "question": "Your company is hit by a cyberattack that disrupts operations.",
-      "trigger": {
-        "depends_on_question_id": 11,
-        "choice_id": "A",
-        "probability": 0.75
-      },
-      "choices": [
-        {
-          "id": "A",
-          "text": "Pay to recover quickly",
-          "impact": {
-            "environment": -5,
-            "money": -20
-          }
-        },
-        {
-          "id": "B",
-          "text": "Restore systems slowly",
-          "impact": {
-            "environment": 0,
-            "money": -5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Invest in long-term security",
-          "impact": {
-            "environment": -5,
-            "money": -15
-          }
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "category": "IT",
-      "title": "Historical data storage",
-      "question": "Your servers are almost full because your company keeps all historical data.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Buy more storage and keep everything",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Delete old unused data",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Archive data in low-energy storage",
-          "impact": {
-            "environment": 10,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "category": "Operations",
-      "title": "Supplier choice",
-      "question": "A supplier is very cheap but not environmentally friendly.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Choose the cheap supplier",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Choose the sustainable supplier",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Work with the supplier to improve",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "category": "HR",
-      "title": "New office location",
-      "question": "You need to open a new office for a growing team.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Open the office in the city center, with easy access but higher rent",
-          "impact": {
-            "environment": 10,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Open the office in a suburban area, cheaper but requiring more commuting",
-          "impact": {
-            "environment": -10,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "category": "Business",
-      "title": "Marketing campaign",
-      "question": "The marketing team wants to launch a promotional campaign.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Print thousands of flyers",
-          "impact": {
-            "environment": -15,
-            "money": -5
-          }
-        },
-        {
-          "id": "B",
-          "text": "Use a digital campaign only",
-          "impact": {
-            "environment": 0,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use a limited eco-designed print campaign combined with digital communication",
-          "impact": {
-            "environment": 10,
-            "money": -5
-          }
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "category": "IT",
-      "title": "Devices left on at night",
-      "question": "Many company devices remain on during the night.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Do nothing",
-          "impact": {
-            "environment": -15,
-            "money": -5
-          }
-        },
-        {
-          "id": "B",
-          "text": "Ask employees to turn off devices",
-          "impact": {
-            "environment": 5,
-            "money": 5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Set automatic shutdown systems",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "category": "HR",
-      "title": "Printing policy",
-      "question": "Employees print too many documents.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Keep printing rules unchanged",
-          "impact": {
-            "environment": -15,
-            "money": -5
-          }
-        },
-        {
-          "id": "B",
-          "text": "Set double-sided black-and-white printing by default",
-          "impact": {
-            "environment": 5,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Require digital documents for internal meetings",
-          "impact": {
-            "environment": 15,
-            "money": 15
-          }
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "category": "IT",
-      "title": "Software hosting architecture",
-      "question": "You need to choose the software hosting architecture.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Monolithic architecture, simple single server",
-          "impact": {
-            "environment": 0,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Microservices architecture",
-          "impact": {
-            "environment": 0,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Serverless architecture",
-          "impact": {
-            "environment": 10,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 20,
-      "category": "IT",
-      "title": "Data backup strategy",
-      "question": "You need to choose a data backup strategy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Continuous real-time backups",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Daily backups",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Weekly backups",
-          "impact": {
-            "environment": 10,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 21,
-      "category": "HR",
-      "title": "Office heating costs",
-      "question": "Energy prices are rising, and heating your offices is becoming very expensive.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Maintain heating and absorb the extra cost",
-          "impact": {
-            "environment": -15,
-            "money": -15
-          }
-        },
-        {
-          "id": "B",
-          "text": "Reduce heating and risk employee dissatisfaction",
-          "impact": {
-            "environment": 10,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Reduce office usage and rely more on remote work",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        },
-        {
-          "id": "D",
-          "text": "Invest in building improvements such as insulation and smart systems",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 22,
-      "category": "HR",
-      "title": "Cycling support",
-      "question": "Employees ask for better cycling support.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Offer a monthly bike bonus",
-          "impact": {
-            "environment": 20,
-            "money": -5
-          }
-        },
-        {
-          "id": "B",
-          "text": "Do nothing because few employees currently cycle",
-          "impact": {
-            "environment": -10,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 23,
-      "category": "HR",
-      "title": "Commuting reimbursement policy",
-      "question": "The company wants to update its commuting reimbursement policy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Increase reimbursement for employees using public transport",
-          "impact": {
-            "environment": 15,
-            "money": -5
-          }
-        },
-        {
-          "id": "B",
-          "text": "Increase fuel reimbursement for employees driving alone",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Offer the same fixed transport bonus to everyone",
-          "impact": {
-            "environment": 0,
-            "money": -5
-          }
-        }
-      ]
-    },
-    {
-      "id": 24,
-      "category": "Operations",
-      "title": "Product returns",
-      "question": "Customers are returning more products, increasing transport and waste.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Keep a flexible return policy",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Make returns stricter",
-          "impact": {
-            "environment": 10,
-            "money": 5
-          }
-        },
-        {
-          "id": "C",
-          "text": "Charge customers for returns",
-          "impact": {
-            "environment": 5,
-            "money": 10
-          }
-        },
-        {
-          "id": "D",
-          "text": "Improve product quality to reduce returns",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 25,
-      "category": "HR",
-      "title": "Video conferencing policy",
-      "question": "You need to define the company video conferencing policy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Always use video",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Use video only when necessary",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use audio-only meetings by default",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 26,
-      "category": "Business",
-      "title": "Investor profitability pressure",
-      "question": "Investors demand higher profitability this quarter.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Cut sustainability investments",
-          "impact": {
-            "environment": -20,
-            "money": 15
-          }
-        },
-        {
-          "id": "B",
-          "text": "Increase prices",
-          "impact": {
-            "environment": 0,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Improve efficiency",
-          "impact": {
-            "environment": 10,
-            "money": 10
-          }
-        },
-        {
-          "id": "D",
-          "text": "Accept lower profits",
-          "impact": {
-            "environment": 10,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 27,
-      "category": "IT",
-      "title": "Software update policy",
-      "question": "You need to decide how frequently systems are updated.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Frequent updates, always using the latest versions",
-          "impact": {
-            "environment": 0,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Balanced update cycle",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Rare updates",
-          "impact": {
-            "environment": 10,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 28,
-      "category": "IT",
-      "title": "Logging and monitoring strategy",
-      "question": "Your systems generate large amounts of logs. You need to choose a logging and monitoring strategy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Store all logs indefinitely",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Keep logs for a limited time",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Use intelligent log filtering and compression",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 29,
-      "category": "IT",
-      "title": "Device lifecycle policy",
-      "question": "Employees request frequent device upgrades. You need to define a device lifecycle policy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Replace devices every 2 years",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Replace devices every 4 years",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Extend lifecycle with maintenance",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 30,
-      "category": "IT",
-      "title": "API design strategy",
-      "question": "Your services expose APIs to partners. You need to define an API design strategy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "No optimization with large data payloads",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Moderate optimization",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Highly optimized lightweight APIs",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 31,
-      "category": "IT",
-      "title": "Testing environment management",
-      "question": "You need to manage environments for development and testing.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Always-on environments",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Scheduled environments with on and off periods",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "On-demand environments only",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": 32,
-      "category": "Facilities",
-      "title": "Office cooling and heating",
-      "question": "Your office energy consumption is rising. How should you improve cooling and heating?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Make no change",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Improve insulation",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Install smart climate control systems",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 33,
-      "category": "IT",
-      "title": "Network traffic optimization",
-      "question": "Your applications generate large amounts of unnecessary data traffic. What should you do?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Do nothing",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Optimize with compression and caching",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Redesign the system to minimize data transfer",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 34,
-      "category": "HR",
-      "title": "Bring your own device policy",
-      "question": "Employees want to use personal devices for work. You need to define a BYOD policy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Allow employees to bring their own devices",
-          "impact": {
-            "environment": 0,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Provide only company-managed devices",
-          "impact": {
-            "environment": 0,
-            "money": -10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Adopt a controlled hybrid policy",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 35,
-      "category": "IT",
-      "title": "AI usage governance",
-      "question": "Employees are increasingly using external AI tools for work tasks. How should usage be governed?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Allow unrestricted use",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Ban external AI tools",
-          "impact": {
-            "environment": 15,
-            "money": 10
-          }
-        },
-        {
-          "id": "C",
-          "text": "Provide approved internal AI tools",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        }
-      ]
-    },
-    {
-      "id": 36,
-      "category": "HR",
-      "title": "Green software engineering training",
-      "question": "Your developers are not trained in energy-efficient coding practices. What training policy should you adopt?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Provide no training",
-          "impact": {
-            "environment": -10,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Offer optional training programs",
-          "impact": {
-            "environment": 5,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Make training programs mandatory",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 37,
-      "category": "IT",
-      "title": "Third-party API usage",
-      "question": "Your system depends heavily on external APIs. You need to define an API dependency strategy.",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Use many external APIs",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Limit API usage",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Replace critical APIs with internal solutions",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 38,
-      "category": "Operations",
-      "title": "Product replacement frequency",
-      "question": "Your products are replaced frequently, generating waste and increasing production costs. What should your company do?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Release new versions frequently",
-          "impact": {
-            "environment": -15,
-            "money": -10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Extend product lifespan",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Design products for repair",
-          "impact": {
-            "environment": 15,
-            "money": 0
-          }
-        },
-        {
-          "id": "D",
-          "text": "Offer a repair or refurbishment service",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    },
-    {
-      "id": 39,
-      "category": "IT",
-      "title": "Technical debt management",
-      "question": "Your systems are becoming harder to maintain, causing inefficiencies and increasing energy usage. How should you manage technical debt?",
-      "choices": [
-        {
-          "id": "A",
-          "text": "Ignore technical debt and continue operations",
-          "impact": {
-            "environment": -15,
-            "money": 10
-          }
-        },
-        {
-          "id": "B",
-          "text": "Gradually refactor key systems",
-          "impact": {
-            "environment": 0,
-            "money": 0
-          }
-        },
-        {
-          "id": "C",
-          "text": "Fully modernize the architecture",
-          "impact": {
-            "environment": 15,
-            "money": -10
-          }
-        }
-      ]
-    }
+	{
+	  "id": 1,
+	  "category": "Operations",
+	  "title": "Packaging waste",
+	  "question": "Customers complain about packaging waste. What should your company do?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Use cheaper plastic packaging",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Switch to recyclable materials",
+		  "impact": {
+			"environment": 10,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use minimal packaging",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 2,
+	  "category": "IT",
+	  "title": "Cloud provider choice",
+	  "question": "You need to choose a cloud provider for a new application.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Choose the cheapest option",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Choose a provider that uses renewable energy",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Choose a local provider to keep data in your country",
+		  "impact": {
+			"environment": 0,
+			"money": -3
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 3,
+	  "category": "Operations",
+	  "title": "Factory location",
+	  "question": "Your company needs to choose where to produce its products. You must decide between different factory locations.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Open a factory in France",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Open a factory in China",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use a factory in Eastern Europe",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 4,
+	  "category": "IT",
+	  "title": "AI delivery planning",
+	  "question": "You want to use AI to improve delivery planning. You must decide where to run the system.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Use a cloud-based AI service",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Run the AI locally on your own servers",
+		  "impact": {
+			"environment": 10,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use a mix of both",
+		  "impact": {
+			"environment": 0,
+			"money": -5
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 5,
+	  "category": "Operations",
+	  "title": "Goods transport",
+	  "question": "You need to organize how goods are transported between warehouses.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Use trucks only",
+		  "impact": {
+			"environment": -15,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Use trains when possible",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Combine trucks and trains",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 6,
+	  "category": "IT",
+	  "title": "Data center cooling strategy",
+	  "question": "Your data center consumes a lot of energy and produces significant heat. Which cooling strategy should you choose?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Traditional air cooling",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Liquid cooling system",
+		  "impact": {
+			"environment": 10,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Liquid cooling system with waste heat recovery for the city",
+		  "impact": {
+			"environment": 20,
+			"money": -15
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 7,
+	  "category": "IT",
+	  "title": "IT infrastructure expansion",
+	  "question": "You need to expand your IT infrastructure.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Build your own data center",
+		  "impact": {
+			"environment": -15,
+			"money": -15
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Use a large cloud provider",
+		  "impact": {
+			"environment": 0,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use a smaller local provider",
+		  "impact": {
+			"environment": 5,
+			"money": -3
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 8,
+	  "category": "HR",
+	  "title": "Employee work policy",
+	  "question": "You need to define the company work policy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Full-time office work",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Hybrid work, 2 to 3 days remote",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Fully remote work",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 9,
+	  "category": "IT",
+	  "title": "Office hardware replacement",
+	  "question": "You need to replace office hardware.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Buy new high-performance devices",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Buy energy-efficient certified devices",
+		  "impact": {
+			"environment": 10,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Buy refurbished devices",
+		  "impact": {
+			"environment": 20,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 10,
+	  "category": "Operations",
+	  "title": "Energy supplier",
+	  "question": "Your company must choose an energy supplier.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Choose the cheapest energy provider",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Choose a renewable energy provider",
+		  "impact": {
+			"environment": 20,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Choose a mixed energy provider",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 11,
+	  "category": "IT",
+	  "title": "Cybersecurity investment",
+	  "question": "You need to decide how much to invest in cybersecurity.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Minimal security",
+		  "impact": {
+			"environment": 5,
+			"money": 10
+		  },
+		  "flags": {
+			"cyberattack_risk": "high"
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Standard security",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  },
+		  "flags": {
+			"cyberattack_risk": "medium"
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Advanced security",
+		  "impact": {
+			"environment": -10,
+			"money": -10
+		  },
+		  "flags": {
+			"cyberattack_risk": "low"
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 12,
+	  "category": "IT",
+	  "title": "Cyberattack response",
+	  "question": "Your company is hit by a cyberattack that disrupts operations.",
+	  "trigger": {
+		"depends_on_question_id": 11,
+		"choice_id": "A",
+		"probability": 0.75
+	  },
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Pay to recover quickly",
+		  "impact": {
+			"environment": -5,
+			"money": -20
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Restore systems slowly",
+		  "impact": {
+			"environment": 0,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Invest in long-term security",
+		  "impact": {
+			"environment": -5,
+			"money": -15
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 13,
+	  "category": "IT",
+	  "title": "Historical data storage",
+	  "question": "Your servers are almost full because your company keeps all historical data.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Buy more storage and keep everything",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Delete old unused data",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Archive data in low-energy storage",
+		  "impact": {
+			"environment": 10,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 14,
+	  "category": "Operations",
+	  "title": "Supplier choice",
+	  "question": "A supplier is very cheap but not environmentally friendly.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Choose the cheap supplier",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Choose the sustainable supplier",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Work with the supplier to improve",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 15,
+	  "category": "HR",
+	  "title": "New office location",
+	  "question": "You need to open a new office for a growing team.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Open the office in the city center, with easy access but higher rent",
+		  "impact": {
+			"environment": 10,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Open the office in a suburban area, cheaper but requiring more commuting",
+		  "impact": {
+			"environment": -10,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 16,
+	  "category": "Business",
+	  "title": "Marketing campaign",
+	  "question": "The marketing team wants to launch a promotional campaign.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Print thousands of flyers",
+		  "impact": {
+			"environment": -15,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Use a digital campaign only",
+		  "impact": {
+			"environment": 0,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use a limited eco-designed print campaign combined with digital communication",
+		  "impact": {
+			"environment": 10,
+			"money": -5
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 17,
+	  "category": "IT",
+	  "title": "Devices left on at night",
+	  "question": "Many company devices remain on during the night.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Do nothing",
+		  "impact": {
+			"environment": -15,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Ask employees to turn off devices",
+		  "impact": {
+			"environment": 5,
+			"money": 5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Set automatic shutdown systems",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 18,
+	  "category": "HR",
+	  "title": "Printing policy",
+	  "question": "Employees print too many documents.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Keep printing rules unchanged",
+		  "impact": {
+			"environment": -15,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Set double-sided black-and-white printing by default",
+		  "impact": {
+			"environment": 5,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Require digital documents for internal meetings",
+		  "impact": {
+			"environment": 15,
+			"money": 15
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 19,
+	  "category": "IT",
+	  "title": "Software hosting architecture",
+	  "question": "You need to choose the software hosting architecture.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Monolithic architecture, simple single server",
+		  "impact": {
+			"environment": 0,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Microservices architecture",
+		  "impact": {
+			"environment": 0,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Serverless architecture",
+		  "impact": {
+			"environment": 10,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 20,
+	  "category": "IT",
+	  "title": "Data backup strategy",
+	  "question": "You need to choose a data backup strategy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Continuous real-time backups",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Daily backups",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Weekly backups",
+		  "impact": {
+			"environment": 10,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 21,
+	  "category": "HR",
+	  "title": "Office heating costs",
+	  "question": "Energy prices are rising, and heating your offices is becoming very expensive.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Maintain heating and absorb the extra cost",
+		  "impact": {
+			"environment": -15,
+			"money": -15
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Reduce heating and risk employee dissatisfaction",
+		  "impact": {
+			"environment": 10,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Reduce office usage and rely more on remote work",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "D",
+		  "text": "Invest in building improvements such as insulation and smart systems",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 22,
+	  "category": "HR",
+	  "title": "Cycling support",
+	  "question": "Employees ask for better cycling support.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Offer a monthly bike bonus",
+		  "impact": {
+			"environment": 20,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Do nothing because few employees currently cycle",
+		  "impact": {
+			"environment": -10,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 23,
+	  "category": "HR",
+	  "title": "Commuting reimbursement policy",
+	  "question": "The company wants to update its commuting reimbursement policy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Increase reimbursement for employees using public transport",
+		  "impact": {
+			"environment": 15,
+			"money": -5
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Increase fuel reimbursement for employees driving alone",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Offer the same fixed transport bonus to everyone",
+		  "impact": {
+			"environment": 0,
+			"money": -5
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 24,
+	  "category": "Operations",
+	  "title": "Product returns",
+	  "question": "Customers are returning more products, increasing transport and waste.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Keep a flexible return policy",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Make returns stricter",
+		  "impact": {
+			"environment": 10,
+			"money": 5
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Charge customers for returns",
+		  "impact": {
+			"environment": 5,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "D",
+		  "text": "Improve product quality to reduce returns",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 25,
+	  "category": "HR",
+	  "title": "Video conferencing policy",
+	  "question": "You need to define the company video conferencing policy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Always use video",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Use video only when necessary",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use audio-only meetings by default",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 26,
+	  "category": "Business",
+	  "title": "Investor profitability pressure",
+	  "question": "Investors demand higher profitability this quarter.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Cut sustainability investments",
+		  "impact": {
+			"environment": -20,
+			"money": 15
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Increase prices",
+		  "impact": {
+			"environment": 0,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Improve efficiency",
+		  "impact": {
+			"environment": 10,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "D",
+		  "text": "Accept lower profits",
+		  "impact": {
+			"environment": 10,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 27,
+	  "category": "IT",
+	  "title": "Software update policy",
+	  "question": "You need to decide how frequently systems are updated.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Frequent updates, always using the latest versions",
+		  "impact": {
+			"environment": 0,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Balanced update cycle",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Rare updates",
+		  "impact": {
+			"environment": 10,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 28,
+	  "category": "IT",
+	  "title": "Logging and monitoring strategy",
+	  "question": "Your systems generate large amounts of logs. You need to choose a logging and monitoring strategy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Store all logs indefinitely",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Keep logs for a limited time",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Use intelligent log filtering and compression",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 29,
+	  "category": "IT",
+	  "title": "Device lifecycle policy",
+	  "question": "Employees request frequent device upgrades. You need to define a device lifecycle policy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Replace devices every 2 years",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Replace devices every 4 years",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Extend lifecycle with maintenance",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 30,
+	  "category": "IT",
+	  "title": "API design strategy",
+	  "question": "Your services expose APIs to partners. You need to define an API design strategy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "No optimization with large data payloads",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Moderate optimization",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Highly optimized lightweight APIs",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 31,
+	  "category": "IT",
+	  "title": "Testing environment management",
+	  "question": "You need to manage environments for development and testing.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Always-on environments",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Scheduled environments with on and off periods",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "On-demand environments only",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 32,
+	  "category": "Facilities",
+	  "title": "Office cooling and heating",
+	  "question": "Your office energy consumption is rising. How should you improve cooling and heating?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Make no change",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Improve insulation",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Install smart climate control systems",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 33,
+	  "category": "IT",
+	  "title": "Network traffic optimization",
+	  "question": "Your applications generate large amounts of unnecessary data traffic. What should you do?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Do nothing",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Optimize with compression and caching",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Redesign the system to minimize data transfer",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 34,
+	  "category": "HR",
+	  "title": "Bring your own device policy",
+	  "question": "Employees want to use personal devices for work. You need to define a BYOD policy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Allow employees to bring their own devices",
+		  "impact": {
+			"environment": 0,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Provide only company-managed devices",
+		  "impact": {
+			"environment": 0,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Adopt a controlled hybrid policy",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 35,
+	  "category": "IT",
+	  "title": "AI usage governance",
+	  "question": "Employees are increasingly using external AI tools for work tasks. How should usage be governed?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Allow unrestricted use",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Ban external AI tools",
+		  "impact": {
+			"environment": 15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Provide approved internal AI tools",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 36,
+	  "category": "HR",
+	  "title": "Green software engineering training",
+	  "question": "Your developers are not trained in energy-efficient coding practices. What training policy should you adopt?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Provide no training",
+		  "impact": {
+			"environment": -10,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Offer optional training programs",
+		  "impact": {
+			"environment": 5,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Make training programs mandatory",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 37,
+	  "category": "IT",
+	  "title": "Third-party API usage",
+	  "question": "Your system depends heavily on external APIs. You need to define an API dependency strategy.",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Use many external APIs",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Limit API usage",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Replace critical APIs with internal solutions",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 38,
+	  "category": "Operations",
+	  "title": "Product replacement frequency",
+	  "question": "Your products are replaced frequently, generating waste and increasing production costs. What should your company do?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Release new versions frequently",
+		  "impact": {
+			"environment": -15,
+			"money": -10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Extend product lifespan",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Design products for repair",
+		  "impact": {
+			"environment": 15,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "D",
+		  "text": "Offer a repair or refurbishment service",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": 39,
+	  "category": "IT",
+	  "title": "Technical debt management",
+	  "question": "Your systems are becoming harder to maintain, causing inefficiencies and increasing energy usage. How should you manage technical debt?",
+	  "choices": [
+		{
+		  "id": "A",
+		  "text": "Ignore technical debt and continue operations",
+		  "impact": {
+			"environment": -15,
+			"money": 10
+		  }
+		},
+		{
+		  "id": "B",
+		  "text": "Gradually refactor key systems",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "id": "C",
+		  "text": "Fully modernize the architecture",
+		  "impact": {
+			"environment": 15,
+			"money": -10
+		  }
+		}
+	  ]
+	}
   ]
+  ,
+"events": [
+  {
+	"id": "cyberattack",
+	"category": "IT",
+	"title": "Cyberattack",
+	"type": "flag",
+	"flag": "cyberattack_risk",
+	"outcomes": [
+	  {
+		"value": "low",
+		"text":" A cyberattack targets your company, but your security systems detect it early since you invested in good cybersecurity. ",
+		"impact": { "environment": 0, "money": 0 }
+	  },
+	  {
+		"value": "medium",
+		"text": "A cyberattack hits your company and manages to disrupt several systems before being stopped.. No major data is lost, but the incident slows down operations and you loose some money.",
+		"impact": { "environment": 0, "money": -10 }
+	  },
+	  {
+		"value": "high",
+		"text": "A cyberattack spreads across your systems without being detected in time since you didn’t invest in cybersecurity. The company struggles to recover, leading financial damage",
+		"impact": { "environment": 0, "money": -25 }
+	  }
+	]
+  },
+  {
+  "id": "packaging_backlash",
+  "category": "Operations",
+  "title": "Packaging Backlash",
+  "type": "answer",
+  "question_id": 1,
+  "outcomes": [
+	{
+	  "value": "C",
+	  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact.",
+	  "impact": { "environment": 0, "money": 0 }
+	},
+	{
+	  "value": "B",
+	  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible. The company faces moderate criticism.",
+	  "impact": { "environment": 0, "money": -8 }
+	},
+	{
+	  "value": "A",
+	  "text": "Customers strongly criticize your packaging choices, especially due to heavy use of plastic. Complaints spread and customer satisfaction drops, leading to lost revenue.",
+	  "impact": { "environment": -5, "money": -18 }
+	}
+  ]
+}
+]
 }
