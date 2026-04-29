@@ -1312,6 +1312,30 @@
 		"impact": { "environment": 0, "money": -25 }
 	  }
 	]
-  }
+  },
+  {
+  "id": "packaging_backlash",
+  "category": "Operations",
+  "title": "Packaging Backlash",
+  "type": "answer",
+  "question_id": 1,
+  "outcomes": [
+	{
+	  "value": "C",
+	  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact.",
+	  "impact": { "environment": 0, "money": 0 }
+	},
+	{
+	  "value": "B",
+	  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible. The company faces moderate criticism.",
+	  "impact": { "environment": 0, "money": -8 }
+	},
+	{
+	  "value": "A",
+	  "text": "Customers strongly criticize your packaging choices, especially due to heavy use of plastic. Complaints spread and customer satisfaction drops, leading to lost revenue.",
+	  "impact": { "environment": -5, "money": -18 }
+	}
+  ]
+}
 ]
 }

@@ -146,7 +146,7 @@ func start_category_game(category_name: String) -> void:
 
 	if restore_category_session(category_name):
 		return
-		
+
 	if category_sessions.is_empty():
 		GameState.reset_game()
 	else:
@@ -493,20 +493,38 @@ func build_event_question(event: Dictionary) -> Dictionary:
 	var money := 0
 
 	if event.get("type") == "flag":
-		var flag = event.get("flag")
-		var value = GameState.decision_flags.get(flag, "medium")
+		var flag := str(event.get("flag", ""))
+		var value := str(GameState.decision_flags.get(flag, "medium"))
 
 		for outcome in event.get("outcomes", []):
-			if outcome.get("value") == value:
-				result_text = outcome.get("text")
-				env = outcome.get("impact", {}).get("environment", 0)
-				money = outcome.get("impact", {}).get("money", 0)
+			if str(outcome.get("value", "")) == value:
+				result_text = str(outcome.get("text", ""))
+				env = int(outcome.get("impact", {}).get("environment", 0))
+				money = int(outcome.get("impact", {}).get("money", 0))
 				break
 
+	elif event.get("type") == "answer":
+		var question_id := int(event.get("question_id", -1))
+
+		if not GameState.answers.has(question_id):
+			return {}
+
+		var value := str(GameState.answers.get(question_id, ""))
+
+		for outcome in event.get("outcomes", []):
+			if str(outcome.get("value", "")) == value:
+				result_text = str(outcome.get("text", ""))
+				env = int(outcome.get("impact", {}).get("environment", 0))
+				money = int(outcome.get("impact", {}).get("money", 0))
+				break
+
+	if result_text.is_empty():
+		return {}
+
 	return {
-		"id": -1000, # special ID
+		"id": -1000,
 		"category": event.get("category", "Event"),
-		"title": event.get("id"),
+		"title": event.get("title", event.get("id", "Event")),
 		"question": result_text,
 		"choices": [
 			{
@@ -563,12 +581,21 @@ func try_show_event_popup_on_intro() -> void:
 	for i in range(pending_events.size() - 1, -1, -1):
 		var event: Dictionary = pending_events[i]
 
-		if event.has("flag"):
+		if event.get("type") == "flag":
 			var flag := str(event.get("flag", ""))
 			if not GameState.decision_flags.has(flag):
 				continue
 
+		if event.get("type") == "answer":
+			var question_id := int(event.get("question_id", -1))
+			if not GameState.answers.has(question_id):
+				continue
+
 		queued_event_question = build_event_question(event)
+
+		if queued_event_question.is_empty():
+			continue
+
 		pending_events.remove_at(i)
 		show_sudden_event_dialog(queued_event_question)
 		save_current_session()
