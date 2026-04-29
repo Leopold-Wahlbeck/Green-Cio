@@ -9,7 +9,7 @@ const INTRO_HOTSPOTS := {
 	"Business": Rect2(0.02, 0.66, 0.41, 0.33),
 	"Operations": Rect2(0.52, 0.66, 0.34, 0.33),
 }
-const QUESTION_SCREEN_RECT := Rect2(0.055, 0.05, 0.889, 0.744)
+const QUESTION_SCREEN_RECT := Rect2(0.095, 0.112, 0.810, 0.658)
 
 @onready var background: TextureRect = $Background
 @onready var environment_value_label: Label = $TopScorePanel/ScoreRow/EnvironmentValueLabel
