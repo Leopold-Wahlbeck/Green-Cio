@@ -49,6 +49,8 @@ var all_events: Array[Dictionary] = []
 var pending_events: Array[Dictionary] = []
 var queued_event: Dictionary = {}
 var queued_event_question: Dictionary = {}
+var selected_choice_index := -1
+var selected_choice: Dictionary = {}
 
 
 func _ready() -> void:
@@ -211,6 +213,9 @@ func display_question(question: Dictionary) -> void:
 		round_label.text = "Event"
 	else:
 		round_label.text = "Question %d / %d" % [GameState.round_number + 1, GameState.max_rounds]
+		
+	selected_choice_index = -1
+	selected_choice = {}
 
 
 func _on_choice_pressed(index: int) -> void:
@@ -221,23 +226,14 @@ func _on_choice_pressed(index: int) -> void:
 	if index >= choices.size():
 		return
 
-	var choice: Dictionary = choices[index]
-	var impact: Dictionary = choice.get("impact", {})
+	selected_choice_index = index
+	selected_choice = choices[index]
+
+	var impact: Dictionary = selected_choice.get("impact", {})
 	var environment_change := int(impact.get("environment", 0))
 	var money_change := int(impact.get("money", 0))
 
-	GameState.apply_choice(
-		environment_change,
-		money_change,
-		int(current_question.get("id")),
-		choice
-	)
-	unlock_triggered_questions(current_question, choice)
-	update_score_labels()
-
-	for button in choice_buttons:
-		button.disabled = true
-
+	# Visa preview (men ändra INTE GameState)
 	feedback_label.text = "Impact: environment %s%d | budget %s%d" % [
 		format_signed_value(environment_change),
 		abs(environment_change),
@@ -245,10 +241,17 @@ func _on_choice_pressed(index: int) -> void:
 		abs(money_change),
 	]
 
+	for i in range(choice_buttons.size()):
+		var button := choice_buttons[i]
+		if i < choices.size():
+			var choice: Dictionary = choices[i]
+			if i == selected_choice_index:
+				button.text = "✓ %s. %s" % [choice.get("id", ""), choice.get("text", "")]
+			else:
+				button.text = "%s. %s" % [choice.get("id", ""), choice.get("text", "")]
+
 	next_button.text = "View results" if remaining_questions.is_empty() else "Next"
 	next_button.visible = true
-	save_current_session()
-
 
 func unlock_triggered_questions(answered_question: Dictionary, selected_choice: Dictionary) -> void:
 	for index in range(pending_triggered_questions.size() - 1, -1, -1):
@@ -328,6 +331,25 @@ func _on_next_button_pressed() -> void:
 			return
 		start_category_game(selected_category)
 		return
+		
+	if not selected_choice.is_empty():
+		var impact: Dictionary = selected_choice.get("impact", {})
+		var environment_change := int(impact.get("environment", 0))
+		var money_change := int(impact.get("money", 0))
+
+		GameState.apply_choice(
+			environment_change,
+			money_change,
+			int(current_question.get("id")),
+			selected_choice
+		)
+
+		unlock_triggered_questions(current_question, selected_choice)
+		update_score_labels()
+
+		selected_choice_index = -1
+		selected_choice = {}
+	
 	load_next_question()
 
 
