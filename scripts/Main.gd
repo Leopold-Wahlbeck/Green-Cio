@@ -11,6 +11,10 @@ const INTRO_HOTSPOTS := {
 }
 const QUESTION_SCREEN_RECT := Rect2(0.095, 0.112, 0.810, 0.658)
 
+const EVENT_BG_GOOD := preload("res://assets/images/Good_Outcome_Event.png")
+const EVENT_BG_BAD := preload("res://assets/images/Bad_Outcome_Event.png")
+const EVENT_BG_NEUTRAL := preload("res://assets/images/Event_Outcome.png")
+
 @onready var background: TextureRect = $Background
 @onready var environment_value_label: Label = $TopScorePanel/ScoreRow/EnvironmentValueLabel
 @onready var budget_value_label: Label = $TopScorePanel/ScoreRow/BudgetValueLabel
@@ -34,6 +38,13 @@ const QUESTION_SCREEN_RECT := Rect2(0.095, 0.112, 0.810, 0.658)
 	"IT": $IntroLayer/ITButton,
 	"Operations": $IntroLayer/OperationsButton,
 }
+
+@onready var event_popup_layer: Control = $EventPopupLayer
+@onready var event_card: TextureRect = $EventPopupLayer/EventCard
+@onready var event_title_label: Label = $EventPopupLayer/EventCard/VBoxContainer/EventTitleLabel
+@onready var event_body_label: Label = $EventPopupLayer/EventCard/VBoxContainer/EventBodyLabel
+@onready var event_impact_label: Label = $EventPopupLayer/EventCard/VBoxContainer/EventImpactLabel
+@onready var event_continue_button: Button = $EventPopupLayer/EventCard/VBoxContainer/EventContinueButton
 
 var all_base_questions: Array[Dictionary] = []
 var all_triggered_questions: Array[Dictionary] = []
@@ -67,6 +78,8 @@ func _ready() -> void:
 	load_questions()
 	update_score_labels()
 	show_intro_screen()
+	event_continue_button.pressed.connect(_on_event_continue_pressed)
+	event_popup_layer.visible = false
 
 
 func load_questions() -> void:
@@ -602,24 +615,44 @@ func try_show_event_popup_on_intro() -> void:
 		return
 
 func show_sudden_event_dialog(event_question: Dictionary) -> void:
-	var dialog := AcceptDialog.new()
-	dialog.title = "⚠ Sudden Event"
-	dialog.dialog_text = "%s\n\n%s" % [
-		str(event_question.get("title", "Event")),
-		str(event_question.get("question", ""))
+	queued_event_question = event_question
+
+	var choices: Array = event_question.get("choices", [])
+	var choice: Dictionary = choices[0]
+	var impact: Dictionary = choice.get("impact", {})
+
+	var environment_change := int(impact.get("environment", 0))
+	var money_change := int(impact.get("money", 0))
+	var total_change := environment_change + money_change
+
+	if total_change > 0:
+		event_card.texture = EVENT_BG_GOOD
+	elif total_change < 0:
+		event_card.texture = EVENT_BG_BAD
+	else:
+		event_card.texture = EVENT_BG_NEUTRAL
+
+	event_title_label.text = str(event_question.get("title", "Event"))
+	event_body_label.text = str(event_question.get("question", ""))
+
+	event_impact_label.text = "Impact: environment %s%d | budget %s%d" % [
+		format_signed_value(environment_change),
+		abs(environment_change),
+		format_signed_value(money_change),
+		abs(money_change),
 	]
 
-	dialog.min_size = Vector2(600, 300)
-	dialog.exclusive = true
+	event_popup_layer.visible = true
 
-	add_child(dialog)
-	dialog.popup_centered()
+func _on_event_continue_pressed() -> void:
+	event_popup_layer.visible = false
 
-	dialog.confirmed.connect(func():
-		apply_event_impact(event_question)
-		dialog.queue_free()
-		update_score_labels()
-	)
+	if not queued_event_question.is_empty():
+		apply_event_impact(queued_event_question)
+		queued_event_question = {}
+
+	update_score_labels()
+	save_current_session()
 
 func apply_event_impact(event_question: Dictionary) -> void:
 	var choices: Array = event_question.get("choices", [])
