@@ -49,6 +49,7 @@ var all_events: Array[Dictionary] = []
 var pending_events: Array[Dictionary] = []
 var queued_event: Dictionary = {}
 var queued_event_question: Dictionary = {}
+var shown_event_ids := {}
 var selected_choice_index := -1
 var selected_choice: Dictionary = {}
 
@@ -427,13 +428,13 @@ func save_current_session() -> void:
 		"buttons_locked": are_choice_buttons_locked(),
 		"is_showing_end_screen": is_showing_end_screen,
 		"pending_events": pending_events.duplicate(true),
+		"shown_event_ids": shown_event_ids.duplicate(true),
 	}
 
 
 func restore_category_session(category_name: String) -> bool:
 	if not category_sessions.has(category_name):
 		return false
-
 	var session: Dictionary = category_sessions[category_name]
 	GameState.restore_snapshot(session.get("game_state", {}))
 	remaining_questions = session.get("remaining_questions", []).duplicate(true)
@@ -540,6 +541,41 @@ func build_event_question(event: Dictionary) -> Dictionary:
 				money = int(outcome.get("impact", {}).get("money", 0))
 				break
 
+	elif event.get("type") == "multi_answer_score":
+		var question_ids: Array = event.get("question_ids", [])
+		var good_choices: Dictionary = event.get("good_choices", {})
+		var bad_choices: Dictionary = event.get("bad_choices", {})
+
+		var good_count := 0
+		var bad_count := 0
+
+		for question_id in question_ids:
+			var qid := int(question_id)
+			var answer := str(GameState.answers.get(qid, ""))
+			var qid_key := str(qid)
+
+			var good_for_question: Array = good_choices.get(qid_key, [])
+			var bad_for_question: Array = bad_choices.get(qid_key, [])
+
+			if good_for_question.has(answer):
+				good_count += 1
+			elif bad_for_question.has(answer):
+				bad_count += 1
+
+		var result_value := "medium"
+
+		if good_count >= 3 and bad_count == 0:
+			result_value = "good"
+		elif bad_count >= 2:
+			result_value = "bad"
+
+		for outcome in event.get("outcomes", []):
+			if str(outcome.get("value", "")) == result_value:
+				result_text = str(outcome.get("text", ""))
+				env = int(outcome.get("impact", {}).get("environment", 0))
+				money = int(outcome.get("impact", {}).get("money", 0))
+				break
+
 	if result_text.is_empty():
 		return {}
 
@@ -602,6 +638,7 @@ func try_show_queued_event_on_intro() -> void:
 func try_show_event_popup_on_intro() -> void:
 	for i in range(pending_events.size() - 1, -1, -1):
 		var event: Dictionary = pending_events[i]
+		var event_id := str(event.get("id", ""))
 
 		if event.get("type") == "flag":
 			var flag := str(event.get("flag", ""))
@@ -612,12 +649,27 @@ func try_show_event_popup_on_intro() -> void:
 			var question_id := int(event.get("question_id", -1))
 			if not GameState.answers.has(question_id):
 				continue
+		
+		if event.get("type") == "multi_answer_score":
+			var question_ids: Array = event.get("question_ids", [])
+			var all_answered := true
+
+			for question_id in question_ids:
+				if not GameState.answers.has(int(question_id)):
+					all_answered = false
+					break
+
+			if not all_answered:
+				continue
 
 		queued_event_question = build_event_question(event)
 
 		if queued_event_question.is_empty():
 			continue
+		if shown_event_ids.has(event_id):
+			continue
 
+		shown_event_ids[event_id] = true
 		pending_events.remove_at(i)
 		show_sudden_event_dialog(queued_event_question)
 		save_current_session()
