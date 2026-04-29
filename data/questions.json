@@ -1372,6 +1372,30 @@
 	  "impact": { "environment": -5, "money": -25 }
 	}
   ]
+},
+{
+  "id": "data_loss_incident",
+  "category": "IT",
+  "title": "Data Loss Incident",
+  "type": "answer",
+  "question_id": 20,
+  "outcomes": [
+	{
+	  "value": "A",
+	  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow for a fast and complete restoration of all lost data. The incident has no lasting consequences.",
+	  "impact": { "environment": 0, "money": 0 }
+	},
+	{
+	  "value": "B",
+	  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered. Some information is permanently lost, causing minor disruptions and additional work.",
+	  "impact": { "environment": 0, "money": -10 }
+	},
+	{
+	  "value": "C",
+	  "text": "An internal error or technical failure leads to the loss of important company data. Due to poor backup practices, critical data is lost permanently. This affects operations, decision-making, and customer trust, leading to significant losses.",
+	  "impact": { "environment": 0, "money": -25 }
+	}
+  ]
 }
 ]
 }
