@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b05txtfqtv7d0"]
+
+[ext_resource type="Script" uid="uid://b5xxjygfpe33g" path="res://scripts/introscript.gd" id="1_6tor5"]
+[ext_resource type="Texture2D" uid="uid://cjy2527isxebq" path="res://assets/images/introscenebackground.png" id="1_g6t57"]
+[ext_resource type="FontFile" uid="uid://c042li8xx2r6" path="res://assets/fonts/Minecraft.ttf" id="2_3uwhn"]
+[ext_resource type="Texture2D" uid="uid://5jt2icbd1mnt" path="res://assets/images/chatbouble.png" id="3_6tor5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nx802"]
+font = ExtResource("2_3uwhn")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tor5"]
+bg_color = Color(0.4512772, 0.6725298, 0.3175374, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8590401, 0.82613134, 3.85046e-07, 1)
+
+[node name="IntroScene" type="Control" unique_id=1038385812]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6tor5")
+
+[node name="CharacterImage" type="TextureRect" parent="." unique_id=571855047]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_g6t57")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=1263295055]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 880.0
+offset_right = 1870.0
+offset_bottom = 1080.0
+
+[node name="DiaText" type="Label" parent="DialogueBox" unique_id=1075931358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Welcome… We are soooo glad you applied for the CIO position at Company Incorporated. 
+"
+label_settings = SubResource("LabelSettings_nx802")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=1935556165]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = -0.055000003
+anchor_right = 0.497
+anchor_bottom = -0.055000003
+offset_left = -199.54004
+offset_top = -40.0
+offset_right = 200.45996
+offset_bottom = 40.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_3uwhn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6tor5")
+text = "NEXT"
+
+[node name="SpeechBouble" type="TextureRect" parent="." unique_id=1093009902]
+visible = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 31.5
+offset_bottom = 24.0
+texture = ExtResource("3_6tor5")
+expand_mode = 1
+
+[node name="DialogueText" type="Label" parent="SpeechBouble" unique_id=2105252893]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 31.0
+offset_bottom = 14.0
+text = "eteadaa"
+autowrap_mode = 2
