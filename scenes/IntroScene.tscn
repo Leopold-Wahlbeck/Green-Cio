@@ -28,7 +28,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_g6t57")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1263295055]
 layout_mode = 0

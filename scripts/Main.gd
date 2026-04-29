@@ -1,7 +1,7 @@
 extends Control
 
 const QUESTIONS_PATH := "res://data/questions.json"
-const INTRO_BACKGROUND := preload("res://assets/images/main_background.png")
+const INTRO_BACKGROUND := preload("res://assets/images/main_background_v2.png")
 const QUESTION_BACKGROUND := preload("res://assets/images/blank-computer.png")
 const INTRO_HOTSPOTS := {
 	"HR": Rect2(0.13, 0.40, 0.29, 0.30),
