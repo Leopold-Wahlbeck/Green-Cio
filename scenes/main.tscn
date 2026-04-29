@@ -1,7 +1,18 @@
-[gd_scene format=3 uid="uid://1xup5uvpt4eq" load_steps=3]
+[gd_scene format=3 uid="uid://1xup5uvpt4eq" load_steps=4]
 
-[ext_resource type="Texture2D" uid="uid://bt17sw5xxqpp0" path="res://assets/images/computer_screen.png" id="1_qq111"]
-[ext_resource type="Script" path="res://scripts/Main.gd" id="2_f78ej"]
+[ext_resource type="Texture2D" path="res://assets/images/main_background.png" id="2_intro"]
+[ext_resource type="Script" path="res://scripts/Main.gd" id="3_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
+bg_color = Color(0.96, 0.97, 0.94, 0.92)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
 
 [node name="main" type="Control" unique_id=1379461960]
 layout_mode = 3
@@ -10,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_f78ej")
+script = ExtResource("3_script")
 
 [node name="Background" type="TextureRect" parent="." unique_id=498623482]
 layout_mode = 1
@@ -19,80 +30,177 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qq111")
+texture = ExtResource("2_intro")
 expand_mode = 1
 
-[node name="ScreenArea" type="Control" parent="." unique_id=927370305]
+[node name="TopScorePanel" type="PanelContainer" parent="." unique_id=579007042]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 18.0
+offset_right = 230.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_score_panel")
+
+[node name="ScoreRow" type="HBoxContainer" parent="TopScorePanel" unique_id=698115447]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="EnvironmentIcon" type="Label" parent="TopScorePanel/ScoreRow" unique_id=133431911]
+layout_mode = 2
+text = "🍃"
+theme_override_font_sizes/font_size = 22
+
+[node name="EnvironmentValueLabel" type="Label" parent="TopScorePanel/ScoreRow" unique_id=93771211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.14, 0.16, 1)
+theme_override_font_sizes/font_size = 20
+text = "Environment 50"
+
+[node name="BudgetIcon" type="Label" parent="TopScorePanel/ScoreRow" unique_id=403381028]
+layout_mode = 2
+text = "🪙"
+theme_override_font_sizes/font_size = 22
+
+[node name="BudgetValueLabel" type="Label" parent="TopScorePanel/ScoreRow" unique_id=715747802]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.14, 0.16, 1)
+theme_override_font_sizes/font_size = 20
+text = "Budget 50"
+
+[node name="IntroLayer" type="Control" parent="." unique_id=574290131]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 251.0
-offset_top = 101.0
-offset_right = -230.0
-offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BusinessButton" type="Button" parent="IntroLayer" unique_id=982349401]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 479.0
+offset_right = 639.0
+offset_bottom = 1005.0
+focus_mode = 0
+flat = true
+text = ""
+
+[node name="HRButton" type="Button" parent="IntroLayer" unique_id=458631270]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 346.0
+offset_right = 646.0
+offset_bottom = 711.0
+focus_mode = 0
+flat = true
+text = ""
+
+[node name="ITButton" type="Button" parent="IntroLayer" unique_id=435468114]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 346.0
+offset_right = 1288.0
+offset_bottom = 710.0
+focus_mode = 0
+flat = true
+text = ""
+
+[node name="OperationsButton" type="Button" parent="IntroLayer" unique_id=10982014]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 480.0
+offset_right = 1318.0
+offset_bottom = 1007.0
+focus_mode = 0
+flat = true
+text = ""
+
+[node name="ScreenArea" type="Control" parent="." unique_id=927370305]
+visible = false
+layout_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScreenArea" unique_id=167584142]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 22.0
-offset_right = 5.0
-offset_bottom = 2.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
+[node name="BackButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=186201102]
+layout_mode = 2
+size_flags_horizontal = 0
+custom_minimum_size = Vector2(0, 60)
+text = "Back"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+
 [node name="TitleLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=1209373673]
 layout_mode = 2
 text = "GreenCio"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
 
 [node name="CategoryLabel" type="Label" parent="ScreenArea/VBoxContainer"]
 layout_mode = 2
 text = "Category"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 
 [node name="RoundLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=204298405]
 layout_mode = 2
 text = "Question 1"
-
-[node name="ScoresRow" type="HBoxContainer" parent="ScreenArea/VBoxContainer" unique_id=118677095]
-layout_mode = 2
-theme_override_constants/separation = 18
-
-[node name="EnvironmentScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=824594052]
-layout_mode = 2
-text = "Environment: 50"
-
-[node name="MoneyScoreLabel" type="Label" parent="ScreenArea/VBoxContainer/ScoresRow" unique_id=114854838]
-layout_mode = 2
-text = "Budget: 50"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 
 [node name="DescriptionLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=912490889]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Your first decision will appear here."
 autowrap_mode = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="ChoiceButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=329043391]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
 text = "Choice 1"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="ChoiceButton2" type="Button" parent="ScreenArea/VBoxContainer" unique_id=928083681]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
 text = "Choice 2"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="ChoiceButton3" type="Button" parent="ScreenArea/VBoxContainer" unique_id=1347375987]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
 text = "Choice 3"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="FeedbackLabel" type="Label" parent="ScreenArea/VBoxContainer" unique_id=261585020]
 layout_mode = 2
 autowrap_mode = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 
 [node name="NextButton" type="Button" parent="ScreenArea/VBoxContainer" unique_id=515475864]
 layout_mode = 2
 text = "Next"
 visible = false
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
