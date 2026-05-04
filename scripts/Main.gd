@@ -34,6 +34,7 @@ const QUESTION_SCREEN_RECT := Rect2(0.095, 0.112, 0.810, 0.658)
 	"IT": $IntroLayer/ITButton,
 	"Operations": $IntroLayer/OperationsButton,
 }
+@onready var info_button: Button = $ScreenArea/infobutton
 
 var all_base_questions: Array[Dictionary] = []
 var all_triggered_questions: Array[Dictionary] = []
@@ -65,6 +66,10 @@ func _ready() -> void:
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	back_button.pressed.connect(_on_back_button_pressed)
 	back_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
+	info_button.pressed.connect(_on_info_button_pressed)
+	info_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
 	next_button.pressed.connect(_on_next_button_pressed)
 	resized.connect(_update_background_layout)
 	load_questions()
@@ -124,6 +129,7 @@ func show_intro_screen() -> void:
 	background.texture = INTRO_BACKGROUND
 	intro_layer.visible = true
 	screen_area.visible = false
+	info_button.visible = false
 	update_score_labels()
 	_update_background_layout()
 
@@ -194,6 +200,7 @@ func display_question(question: Dictionary) -> void:
 	description_label.text = str(question.get("question", ""))
 	feedback_label.text = ""
 	next_button.visible = false
+	info_button.visible = str(question.get("info", "")).strip_edges() != ""
 
 	var choices: Array = question.get("choices", [])
 
@@ -293,6 +300,7 @@ func show_end_screen() -> void:
 	back_button.visible = true
 	next_button.text = "Replay category"
 	next_button.visible = true
+	info_button.visible = false
 	update_score_labels()
 	save_current_session()
 
@@ -312,6 +320,7 @@ func show_loading_error(message: String) -> void:
 		button.visible = false
 	back_button.visible = true
 	next_button.visible = false
+	info_button.visible = false
 	update_score_labels()
 
 
@@ -712,4 +721,30 @@ func apply_event_impact(event_question: Dictionary) -> void:
 		money_change,
 		int(event_question.get("id", -1000)),
 		choice
+	)
+	
+
+func _on_info_button_pressed() -> void:
+	if current_question.is_empty():
+		return
+
+	var info_text := str(current_question.get("info", "")).strip_edges()
+
+	if info_text.is_empty():
+		return
+
+	var dialog := AcceptDialog.new()
+	dialog.title = "Information"
+	dialog.dialog_text = "%s\n\n%s" % [
+		str(current_question.get("title", "Question")),
+		info_text
+	]
+
+	dialog.min_size = Vector2(700, 400)
+	dialog.exclusive = true
+
+	add_child(dialog)
+	dialog.popup_centered()
+	dialog.confirmed.connect(func():
+		dialog.queue_free()
 	)

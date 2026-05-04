@@ -13,6 +13,7 @@
 	  "category": "Operations",
 	  "title": "Packaging waste",
 	  "question": "Customers complain about packaging waste. What should your company do?",
+	  "info": "test",
 	  "choices": [
 		{
 		  "id": "A",
