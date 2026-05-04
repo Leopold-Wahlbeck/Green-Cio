@@ -50,7 +50,7 @@
 		  "id": "A",
 		  "text": "Choose the cheapest option",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": 10
 		  }
 		},
@@ -82,7 +82,7 @@
 		  "id": "A",
 		  "text": "Open a factory in France",
 		  "impact": {
-			"environment": 15,
+			"environment": 10,
 			"money": -10
 		  }
 		},
@@ -114,7 +114,7 @@
 		  "id": "A",
 		  "text": "Use a cloud-based AI service",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": -10
 		  }
 		},
@@ -122,7 +122,7 @@
 		  "id": "B",
 		  "text": "Run the AI locally on your own servers",
 		  "impact": {
-			"environment": 10,
+			"environment": 5,
 			"money": 0
 		  }
 		},
@@ -250,7 +250,7 @@
 		  "id": "B",
 		  "text": "Hybrid work, 2 to 3 days remote",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 0
 		  }
 		},
@@ -282,7 +282,7 @@
 		  "id": "B",
 		  "text": "Buy energy-efficient certified devices",
 		  "impact": {
-			"environment": 10,
+			"environment": 5,
 			"money": -5
 		  }
 		},
@@ -338,7 +338,7 @@
 		  "id": "A",
 		  "text": "Minimal security",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 10
 		  },
 		  "flags": {
@@ -360,7 +360,7 @@
 		  "id": "C",
 		  "text": "Advanced security",
 		  "impact": {
-			"environment": -10,
+			"environment": -5,
 			"money": -10
 		  },
 		  "flags": {
@@ -464,7 +464,7 @@
 		  "id": "C",
 		  "text": "Work with the supplier to improve",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 0
 		  }
 		}
@@ -504,7 +504,7 @@
 		  "id": "A",
 		  "text": "Print thousands of flyers",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": -5
 		  }
 		},
@@ -600,7 +600,7 @@
 		  "id": "A",
 		  "text": "Monolithic architecture, simple single server",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 10
 		  }
 		},
@@ -608,7 +608,7 @@
 		  "id": "B",
 		  "text": "Microservices architecture",
 		  "impact": {
-			"environment": 0,
+			"environment": -5,
 			"money": -10
 		  }
 		},
@@ -632,7 +632,7 @@
 		  "id": "A",
 		  "text": "Continuous real-time backups",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": -10
 		  }
 		},
@@ -648,7 +648,7 @@
 		  "id": "C",
 		  "text": "Weekly backups",
 		  "impact": {
-			"environment": 10,
+			"environment": 5,
 			"money": 10
 		  }
 		}
@@ -800,7 +800,7 @@
 		  "id": "A",
 		  "text": "Always use video",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": -10
 		  }
 		},
@@ -816,7 +816,7 @@
 		  "id": "C",
 		  "text": "Use audio-only meetings by default",
 		  "impact": {
-			"environment": 15,
+			"environment": 10,
 			"money": 10
 		  }
 		}
@@ -872,7 +872,7 @@
 		  "id": "A",
 		  "text": "Frequent updates, always using the latest versions",
 		  "impact": {
-			"environment": 0,
+			"environment": -5,
 			"money": -10
 		  }
 		},
@@ -880,7 +880,7 @@
 		  "id": "B",
 		  "text": "Balanced update cycle",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 0
 		  }
 		},
@@ -888,7 +888,7 @@
 		  "id": "C",
 		  "text": "Rare updates",
 		  "impact": {
-			"environment": 10,
+			"environment": -5,
 			"money": 10
 		  }
 		}
@@ -1008,7 +1008,7 @@
 		  "id": "B",
 		  "text": "Scheduled environments with on and off periods",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 0
 		  }
 		},
@@ -1040,7 +1040,7 @@
 		  "id": "B",
 		  "text": "Improve insulation",
 		  "impact": {
-			"environment": 0,
+			"environment": 10,
 			"money": 0
 		  }
 		},
@@ -1072,7 +1072,7 @@
 		  "id": "B",
 		  "text": "Optimize with compression and caching",
 		  "impact": {
-			"environment": 0,
+			"environment": 10,
 			"money": 0
 		  }
 		},
@@ -1096,7 +1096,7 @@
 		  "id": "A",
 		  "text": "Allow employees to bring their own devices",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 10
 		  }
 		},
@@ -1104,7 +1104,7 @@
 		  "id": "B",
 		  "text": "Provide only company-managed devices",
 		  "impact": {
-			"environment": 0,
+			"environment": -5,
 			"money": -10
 		  }
 		},
@@ -1112,7 +1112,7 @@
 		  "id": "C",
 		  "text": "Adopt a controlled hybrid policy",
 		  "impact": {
-			"environment": 15,
+			"environment": 10,
 			"money": 0
 		  }
 		}
@@ -1136,7 +1136,7 @@
 		  "id": "B",
 		  "text": "Ban external AI tools",
 		  "impact": {
-			"environment": 15,
+			"environment": 10,
 			"money": 10
 		  }
 		},
@@ -1192,7 +1192,7 @@
 		  "id": "A",
 		  "text": "Use many external APIs",
 		  "impact": {
-			"environment": -15,
+			"environment": -10,
 			"money": 10
 		  }
 		},
@@ -1200,7 +1200,7 @@
 		  "id": "B",
 		  "text": "Limit API usage",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 0
 		  }
 		},
@@ -1208,7 +1208,7 @@
 		  "id": "C",
 		  "text": "Replace critical APIs with internal solutions",
 		  "impact": {
-			"environment": 15,
+			"environment": 10,
 			"money": -10
 		  }
 		}
@@ -1232,7 +1232,7 @@
 		  "id": "B",
 		  "text": "Extend product lifespan",
 		  "impact": {
-			"environment": 0,
+			"environment": 10,
 			"money": 0
 		  }
 		},
@@ -1272,7 +1272,7 @@
 		  "id": "B",
 		  "text": "Gradually refactor key systems",
 		  "impact": {
-			"environment": 0,
+			"environment": 10,
 			"money": 0
 		  }
 		},
@@ -1286,116 +1286,176 @@
 		}
 	  ]
 	}
-  ]
-  ,
-"events": [
-  {
-	"id": "cyberattack",
-	"category": "IT",
-	"title": "Cyberattack",
-	"type": "flag",
-	"flag": "cyberattack_risk",
-	"outcomes": [
-	  {
-		"value": "low",
-		"text":" A cyberattack targets your company, but your security systems detect it early since you invested in good cybersecurity. ",
-		"impact": { "environment": 0, "money": 0 }
+  ],
+  "events": [
+	{
+	  "id": "cyberattack",
+	  "category": "IT",
+	  "title": "Cyberattack",
+	  "type": "flag",
+	  "flag": "cyberattack_risk",
+	  "outcomes": [
+		{
+		  "value": "low",
+		  "text": "A cyberattack targets your company, but your security systems detect it early because you invested in good cybersecurity. The attack is stopped before it causes serious damage. Score change: Environment 0, Money 0.",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "value": "medium",
+		  "text": "A cyberattack hits your company and disrupts several systems before being stopped. No major data is lost, but recovery work increases energy use and slows operations, causing a financial loss. Score change: Environment -5, Money -10.",
+		  "impact": {
+			"environment": -5,
+			"money": -10
+		  }
+		},
+		{
+		  "value": "high",
+		  "text": "A cyberattack spreads across your systems without being detected in time because you did not invest enough in cybersecurity. Recovery requires extra IT work, system rebuilding, and emergency operations, causing major financial damage. Score change: Environment -10, Money -25.",
+		  "impact": {
+			"environment": -10,
+			"money": -25
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": "packaging_backlash",
+	  "category": "Operations",
+	  "title": "Packaging Backlash",
+	  "type": "answer",
+	  "question_id": 1,
+	  "outcomes": [
+		{
+		  "value": "C",
+		  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact. Score change: Environment 0, Money 0.",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "value": "B",
+		  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible, so the company faces moderate criticism and loses some revenue. Score change: Environment 0, Money -8.",
+		  "impact": {
+			"environment": 0,
+			"money": -8
+		  }
+		},
+		{
+		  "value": "A",
+		  "text": "Customers strongly criticize your packaging choices, especially because of heavy plastic use. Complaints spread, customer satisfaction drops, and the extra packaging waste creates an additional environmental penalty. Score change: Environment -5, Money -18.",
+		  "impact": {
+			"environment": -5,
+			"money": -18
+		  }
+		}
+	  ]
+	},
+	{
+	  "id": "media_scandal",
+	  "category": "General",
+	  "title": "Media Scandal",
+	  "type": "multi_answer_score",
+	  "question_ids": [
+		10,
+		14,
+		16,
+		38
+	  ],
+	  "good_choices": {
+		"10": [
+          "B"
+		],
+		"14": [
+		  "B",
+          "C"
+		],
+		"16": [
+		  "B",
+          "C"
+		],
+		"38": [
+		  "B",
+		  "C",
+          "D"
+		]
 	  },
-	  {
-		"value": "medium",
-		"text": "A cyberattack hits your company and manages to disrupt several systems before being stopped.. No major data is lost, but the incident slows down operations and you loose some money.",
-		"impact": { "environment": 0, "money": -10 }
+	  "bad_choices": {
+		"10": [
+          "A"
+		],
+		"14": [
+          "A"
+		],
+		"16": [
+          "A"
+		],
+		"38": [
+          "A"
+		]
 	  },
-	  {
-		"value": "high",
-		"text": "A cyberattack spreads across your systems without being detected in time since you didn’t invest in cybersecurity. The company struggles to recover, leading financial damage",
-		"impact": { "environment": 0, "money": -25 }
-	  }
-	]
-  },
-  {
-  "id": "packaging_backlash",
-  "category": "Operations",
-  "title": "Packaging Backlash",
-  "type": "answer",
-  "question_id": 1,
-  "outcomes": [
-	{
-	  "value": "C",
-	  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact.",
-	  "impact": { "environment": 0, "money": 0 }
+	  "outcomes": [
+		{
+		  "value": "good",
+		  "text": "A journalist investigation reviews your company’s environmental practices. Because you invested in sustainable solutions and made responsible choices, the report highlights your efforts and trust is maintained. Score change: Environment 0, Money 0.",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "value": "medium",
+		  "text": "A media report exposes some environmental weaknesses in your operations. You followed some sustainable practices, but remaining issues attract criticism and slightly damage the company’s reputation. Score change: Environment 0, Money -12.",
+		  "impact": {
+			"environment": 0,
+			"money": -12
+		  }
+		},
+		{
+		  "value": "bad",
+		  "text": "A major media scandal breaks out after your company is exposed for poor environmental practices, such as cheap suppliers, high-emission choices, or wasteful product decisions. Public trust drops sharply and the company suffers both reputational and environmental penalties. Score change: Environment -5, Money -25.",
+		  "impact": {
+			"environment": -5,
+			"money": -25
+		  }
+		}
+	  ]
 	},
 	{
-	  "value": "B",
-	  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible. The company faces moderate criticism.",
-	  "impact": { "environment": 0, "money": -8 }
-	},
-	{
-	  "value": "A",
-	  "text": "Customers strongly criticize your packaging choices, especially due to heavy use of plastic. Complaints spread and customer satisfaction drops, leading to lost revenue.",
-	  "impact": { "environment": -5, "money": -18 }
+	  "id": "data_loss_incident",
+	  "category": "IT",
+	  "title": "Data Loss Incident",
+	  "type": "answer",
+	  "question_id": 20,
+	  "outcomes": [
+		{
+		  "value": "A",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow fast and complete restoration, so the incident has no lasting consequences. Score change: Environment 0, Money 0.",
+		  "impact": {
+			"environment": 0,
+			"money": 0
+		  }
+		},
+		{
+		  "value": "B",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered, causing minor disruption and extra work, but no direct environmental penalty. Score change: Environment 0, Money -10.",
+		  "impact": {
+			"environment": 0,
+			"money": -10
+		  }
+		},
+		{
+		  "value": "C",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Due to weak backup practices, critical data is lost permanently, forcing duplicate work, recovery operations, and significant financial losses. Score change: Environment -5, Money -25.",
+		  "impact": {
+			"environment": -5,
+			"money": -25
+		  }
+		}
+	  ]
 	}
   ]
-},
-{
-  "id": "media_scandal",
-  "category": "General",
-  "title": "Media Scandal",
-  "type": "multi_answer_score",
-  "question_ids": [10, 14, 16, 38],
-  "good_choices": {
-	"10": ["B"],
-	"14": ["B", "C"],
-	"16": ["B", "C"],
-	"38": ["B", "C", "D"]
-  },
-  "bad_choices": {
-	"10": ["A"],
-	"14": ["A"],
-	"16": ["A"],
-	"38": ["A"]
-  },
-  "outcomes": [
-	{
-	  "value": "good",
-	  "text": "A journalist investigation reveals your company’s environmental practices, but since you invested in sustainable solutions and made responsible choices, the report highlights your efforts. The company’s image remains strong and trust is maintained.",
-	  "impact": { "environment": 0, "money": 0 }
-	},
-	{
-	  "value": "medium",
-	  "text": "A media report exposes some environmental weaknesses in your operations. While you followed some sustainable practices, there are still issues that attract criticism. The company’s reputation is slightly affected.",
-	  "impact": { "environment": 0, "money": -12 }
-	},
-	{
-	  "value": "bad",
-	  "text": "A major media scandal breaks out after your company is exposed for poor environmental practices, especially due to earlier decisions like cheap suppliers or high-emission choices. Public trust drops sharply, customers react negatively.",
-	  "impact": { "environment": -5, "money": -25 }
-	}
-  ]
-},
-{
-  "id": "data_loss_incident",
-  "category": "IT",
-  "title": "Data Loss Incident",
-  "type": "answer",
-  "question_id": 20,
-  "outcomes": [
-	{
-	  "value": "A",
-	  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow for a fast and complete restoration of all lost data. The incident has no lasting consequences.",
-	  "impact": { "environment": 0, "money": 0 }
-	},
-	{
-	  "value": "B",
-	  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered. Some information is permanently lost, causing minor disruptions and additional work.",
-	  "impact": { "environment": 0, "money": -10 }
-	},
-	{
-	  "value": "C",
-	  "text": "An internal error or technical failure leads to the loss of important company data. Due to poor backup practices, critical data is lost permanently. This affects operations, decision-making, and customer trust, leading to significant losses.",
-	  "impact": { "environment": 0, "money": -25 }
-	}
-  ]
-}
-]
 }
