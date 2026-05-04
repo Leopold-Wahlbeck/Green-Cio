@@ -737,22 +737,28 @@ func apply_event_impact(event_question: Dictionary) -> void:
 
 func check_game_over() -> bool:
 	if GameState.economy_score <= 0:
-		show_game_over_screen()
+		GameState.economy_score = 0
+		show_game_over_screen("Budget depleted", "Your budget reached 0 money-points.")
+		return true
+
+	if GameState.environment_score <= 0:
+		GameState.environment_score = 0
+		show_game_over_screen("Environment depleted", "Your environment score reached 0 points.")
 		return true
 
 	return false
 
-func show_game_over_screen() -> void:
+func show_game_over_screen(reason: String, message: String) -> void:
 	current_question = {}
 	is_showing_end_screen = false
 
 	title_label.text = "Game Over"
-	category_label.text = "Budget depleted"
-	round_label.text = "You went under budget"
+	category_label.text = reason
+	round_label.text = "Simulation failed"
 
-	description_label.text = "Your budget reached 0 money-points.\n\nThe organization can no longer continue with this plan."
+	description_label.text = "%s\n\nThe organization can no longer continue with this plan." % message
 
-	feedback_label.text = "Try again and make choices that keep the budget above 0."
+	feedback_label.text = "Reset the game and try to keep both environment and budget above 0."
 
 	title_label.add_theme_color_override("font_color", Color.RED)
 	category_label.add_theme_color_override("font_color", Color(0.8, 0.0, 0.0))
