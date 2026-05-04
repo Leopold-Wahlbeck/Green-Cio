@@ -63,6 +63,7 @@ var queued_event_question: Dictionary = {}
 var shown_event_ids := {}
 var selected_choice_index := -1
 var selected_choice: Dictionary = {}
+var completed_categories := {}
 
 
 func _ready() -> void:
@@ -318,6 +319,12 @@ func update_score_labels() -> void:
 
 
 func show_end_screen() -> void:
+	
+	mark_category_completed(selected_category)
+
+	if are_all_categories_completed():
+		go_to_win_scene()
+		return
 	current_question = {}
 	is_showing_end_screen = true
 	title_label.text = "%s complete" % selected_category
@@ -877,3 +884,24 @@ func _on_info_button_pressed() -> void:
 	dialog.confirmed.connect(func():
 		dialog.queue_free()
 	)
+	
+	
+func mark_category_completed(category_name: String) -> void:
+	if category_name.is_empty():
+		return
+
+	completed_categories[category_name] = true
+
+
+func are_all_categories_completed() -> bool:
+	var required_categories := ["IT", "HR", "Business", "Operations"]
+
+	for category_name in required_categories:
+		if not completed_categories.has(category_name):
+			return false
+
+	return true
+
+
+func go_to_win_scene() -> void:
+	get_tree().change_scene_to_file("res://scenes/winningscreen.tscn")
