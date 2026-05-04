@@ -319,7 +319,7 @@ func show_end_screen() -> void:
 	for button in choice_buttons:
 		button.visible = false
 	back_button.visible = true
-	next_button.text = "Replay category"
+	next_button.text = "Back to main screen"
 	next_button.visible = true
 	info_button.visible = false
 	update_score_labels()
@@ -360,9 +360,9 @@ func _on_next_button_pressed() -> void:
 		if selected_category.is_empty():
 			show_intro_screen()
 			return
+			
 		if is_showing_end_screen:
-			category_sessions.erase(selected_category)
-			start_category_game(selected_category)
+			show_intro_screen()
 			return
 		start_category_game(selected_category)
 		return
@@ -465,7 +465,6 @@ func save_current_session() -> void:
 		"buttons_locked": are_choice_buttons_locked(),
 		"is_showing_end_screen": is_showing_end_screen,
 		"pending_events": pending_events.duplicate(true),
-		"shown_event_ids": shown_event_ids.duplicate(true),
 	}
 
 
@@ -484,7 +483,6 @@ func restore_category_session(category_name: String) -> bool:
 	next_button.visible = bool(session.get("next_visible", false))
 	next_button.text = str(session.get("next_text", "Next"))
 	is_showing_end_screen = bool(session.get("is_showing_end_screen", false))
-	shown_event_ids = session.get("shown_event_ids", {}).duplicate(true)
 
 	update_score_labels()
 
@@ -677,8 +675,10 @@ func try_show_queued_event_on_intro() -> void:
 func try_show_event_popup_on_intro() -> void:
 	for i in range(pending_events.size() - 1, -1, -1):
 		var event: Dictionary = pending_events[i]
-		var event_id := str(event.get("id", ""))
-
+		var event_id := str(event.get("id", "%s_%s" % [
+			event.get("category", "General"),
+			event.get("title", "Event")
+		]))
 		if event.get("type") == "flag":
 			var flag := str(event.get("flag", ""))
 			if not GameState.decision_flags.has(flag):
