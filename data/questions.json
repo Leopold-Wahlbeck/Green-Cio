@@ -38,10 +38,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Packaging impact depends on both material type and total waste volume. Plastic-heavy packaging tends to create higher end-of-life impact, recyclable materials improve recovery, and minimal packaging avoids material use at the source.",
-	  "best_choice": "C",
-	  "best_reason": "Minimal packaging is best because avoiding material use usually beats only changing the material."
+	  ]
 	},
 	{
 	  "id": 2,
@@ -53,7 +50,7 @@
 		  "id": "A",
 		  "text": "Choose the cheapest option",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": 10
 		  }
 		},
@@ -73,10 +70,7 @@
 			"money": -3
 		  }
 		}
-	  ],
-	  "info": "Cloud impact depends on electricity mix, data-center efficiency, cooling, and utilization. A cheap provider is not necessarily low-carbon, while renewable-powered infrastructure can significantly reduce footprint.",
-	  "best_choice": "B",
-	  "best_reason": "A renewable-energy provider has the strongest environmental score in this scenario."
+	  ]
 	},
 	{
 	  "id": 3,
@@ -88,7 +82,7 @@
 		  "id": "A",
 		  "text": "Open a factory in France",
 		  "impact": {
-			"environment": 10,
+			"environment": 15,
 			"money": -10
 		  }
 		},
@@ -108,10 +102,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Factory location affects both production electricity and logistics distance. Production in a lower-carbon electricity system and closer market can reduce emissions compared with distant high-carbon manufacturing.",
-	  "best_choice": "A",
-	  "best_reason": "France is treated as the lowest-carbon location among the options in this model."
+	  ]
 	},
 	{
 	  "id": 4,
@@ -123,7 +114,7 @@
 		  "id": "A",
 		  "text": "Use a cloud-based AI service",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": -10
 		  }
 		},
@@ -131,7 +122,7 @@
 		  "id": "B",
 		  "text": "Run the AI locally on your own servers",
 		  "impact": {
-			"environment": 5,
+			"environment": 10,
 			"money": 0
 		  }
 		},
@@ -143,10 +134,7 @@
 			"money": -5
 		  }
 		}
-	  ],
-	  "info": "AI systems can require significant compute. Impact depends on model size, usage volume, hardware utilization, and whether the workload is optimized locally or run through general cloud services.",
-	  "best_choice": "B",
-	  "best_reason": "Running optimized AI locally scores best here because it reduces overuse of high-impact cloud compute."
+	  ]
 	},
 	{
 	  "id": 5,
@@ -178,10 +166,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Freight emissions vary strongly by mode. Rail generally emits much less per tonne-kilometre than road freight, while trucks are more flexible but more carbon-intensive.",
-	  "best_choice": "B",
-	  "best_reason": "Using trains when possible gives the strongest environmental improvement."
+	  ]
 	},
 	{
 	  "id": 6,
@@ -213,10 +198,7 @@
 			"money": -15
 		  }
 		}
-	  ],
-	  "info": "Data-center cooling can be a major energy driver. Liquid cooling can improve efficiency, and recovering waste heat creates an additional circular benefit by reusing heat that would otherwise be lost.",
-	  "best_choice": "C",
-	  "best_reason": "Liquid cooling with waste-heat recovery gives the highest environmental score."
+	  ]
 	},
 	{
 	  "id": 7,
@@ -248,10 +230,7 @@
 			"money": -3
 		  }
 		}
-	  ],
-	  "info": "Infrastructure expansion has both embodied and operational impact. Building a private data center can create large construction and utilization impacts, while shared infrastructure may improve hardware utilization.",
-	  "best_choice": "C",
-	  "best_reason": "The smaller local provider is slightly positive in this model, assuming efficient/local operation."
+	  ]
 	},
 	{
 	  "id": 8,
@@ -271,7 +250,7 @@
 		  "id": "B",
 		  "text": "Hybrid work, 2 to 3 days remote",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -283,10 +262,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Work policy affects commuting and office energy. Remote work can reduce commuting emissions, but home-energy rebound effects should still be considered.",
-	  "best_choice": "C",
-	  "best_reason": "Fully remote work scores best when commuting and office-space use are actually reduced."
+	  ]
 	},
 	{
 	  "id": 9,
@@ -306,7 +282,7 @@
 		  "id": "B",
 		  "text": "Buy energy-efficient certified devices",
 		  "impact": {
-			"environment": 5,
+			"environment": 10,
 			"money": -5
 		  }
 		},
@@ -318,10 +294,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Digital device footprint is dominated by manufacturing. Extending device life and buying refurbished equipment avoids much of the impact from producing new hardware.",
-	  "best_choice": "C",
-	  "best_reason": "Refurbished devices score best because they avoid most new manufacturing impact."
+	  ]
 	},
 	{
 	  "id": 10,
@@ -353,10 +326,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Energy supplier choice changes electricity carbon intensity. Renewable electricity is the strongest option, mixed energy is neutral, and cheap unspecified energy may rely on higher-carbon sources.",
-	  "best_choice": "B",
-	  "best_reason": "Renewable energy has the best environmental score."
+	  ]
 	},
 	{
 	  "id": 11,
@@ -368,7 +338,7 @@
 		  "id": "A",
 		  "text": "Minimal security",
 		  "impact": {
-			"environment": 0,
+			"environment": 5,
 			"money": 10
 		  },
 		  "flags": {
@@ -390,17 +360,14 @@
 		  "id": "C",
 		  "text": "Advanced security",
 		  "impact": {
-			"environment": -5,
+			"environment": -10,
 			"money": -10
 		  },
 		  "flags": {
 			"cyberattack_risk": "low"
 		  }
 		}
-	  ],
-	  "info": "Cybersecurity has a small operational footprint, but weak security can create incidents with financial and operational damage. Advanced security adds some compute/storage overhead in this model.",
-	  "best_choice": "A",
-	  "best_reason": "Minimal and standard security are tied environmentally; A is marked best only by environmental score, though it increases cyberattack risk."
+	  ]
 	},
 	{
 	  "id": 12,
@@ -437,10 +404,7 @@
 			"money": -15
 		  }
 		}
-	  ],
-	  "info": "Incident response can require extra recovery activity and infrastructure use. Slow restoration has little direct environmental effect but can hurt the business financially.",
-	  "best_choice": "B",
-	  "best_reason": "Slow restoration has the best direct environmental score, although it may not be the best business decision."
+	  ]
 	},
 	{
 	  "id": 13,
@@ -472,10 +436,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Stored data has an ongoing footprint because storage infrastructure consumes energy and hardware. Deleting unused data avoids storage demand; cold archive is better than keeping everything online.",
-	  "best_choice": "B",
-	  "best_reason": "Deleting old unused data has the highest environmental score."
+	  ]
 	},
 	{
 	  "id": 14,
@@ -503,14 +464,11 @@
 		  "id": "C",
 		  "text": "Work with the supplier to improve",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Supplier choice affects upstream production footprint. A cheap but polluting supplier shifts environmental impact into the supply chain; sustainable procurement reduces that footprint.",
-	  "best_choice": "B",
-	  "best_reason": "Choosing the sustainable supplier gives the highest environmental score."
+	  ]
 	},
 	{
 	  "id": 15,
@@ -534,10 +492,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Office location affects commuting. City-center locations often support public transport and shorter trips, while suburban locations can increase car dependence.",
-	  "best_choice": "A",
-	  "best_reason": "The city-center office is better because it supports lower-carbon commuting."
+	  ]
 	},
 	{
 	  "id": 16,
@@ -549,7 +504,7 @@
 		  "id": "A",
 		  "text": "Print thousands of flyers",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": -5
 		  }
 		},
@@ -569,10 +524,7 @@
 			"money": -5
 		  }
 		}
-	  ],
-	  "info": "Marketing campaigns have material and distribution impacts. Mass printed flyers create paper, ink, and logistics footprint; digital communication avoids most physical material use.",
-	  "best_choice": "C",
-	  "best_reason": "A limited eco-designed print campaign combined with digital communication gives the best score."
+	  ]
 	},
 	{
 	  "id": 17,
@@ -604,10 +556,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Idle devices waste electricity outside working hours. Reminders help, but automatic shutdown is more reliable because it reduces dependency on individual behavior.",
-	  "best_choice": "C",
-	  "best_reason": "Automatic shutdown systems provide the strongest reliable reduction."
+	  ]
 	},
 	{
 	  "id": 18,
@@ -639,10 +588,7 @@
 			"money": 15
 		  }
 		}
-	  ],
-	  "info": "Printing uses paper, ink, hardware, and energy. Duplex black-and-white printing reduces material use, while digital internal documents avoid most printing entirely.",
-	  "best_choice": "C",
-	  "best_reason": "Digital documents for internal meetings best avoid printing impact."
+	  ]
 	},
 	{
 	  "id": 19,
@@ -654,7 +600,7 @@
 		  "id": "A",
 		  "text": "Monolithic architecture, simple single server",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 10
 		  }
 		},
@@ -662,7 +608,7 @@
 		  "id": "B",
 		  "text": "Microservices architecture",
 		  "impact": {
-			"environment": -5,
+			"environment": 0,
 			"money": -10
 		  }
 		},
@@ -674,10 +620,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Software architecture affects server utilization and operational overhead. Microservices can add network and orchestration overhead; serverless can reduce idle capacity when well designed.",
-	  "best_choice": "C",
-	  "best_reason": "Serverless architecture scores best environmentally in this model."
+	  ]
 	},
 	{
 	  "id": 20,
@@ -689,7 +632,7 @@
 		  "id": "A",
 		  "text": "Continuous real-time backups",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": -10
 		  }
 		},
@@ -705,14 +648,11 @@
 		  "id": "C",
 		  "text": "Weekly backups",
 		  "impact": {
-			"environment": 5,
+			"environment": 10,
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Backup strategy balances resilience with storage and transfer footprint. Continuous backups duplicate more data, while weekly backups reduce footprint but increase data-loss risk.",
-	  "best_choice": "C",
-	  "best_reason": "Weekly backups use the least backup storage and transfer in the environmental model."
+	  ]
 	},
 	{
 	  "id": 21,
@@ -752,10 +692,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Heating strategy affects building energy demand. Lower heating and reduced office use save energy; insulation and smart systems can create durable savings but require investment.",
-	  "best_choice": "C",
-	  "best_reason": "Reducing office usage and relying more on remote work ties environmentally with building improvements but costs less in this game."
+	  ]
 	},
 	{
 	  "id": 22,
@@ -779,10 +716,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Cycling support can shift commutes toward near-zero direct-emission transport. Doing nothing preserves existing commuting patterns.",
-	  "best_choice": "A",
-	  "best_reason": "A bike bonus can produce a strong positive commuting modal shift."
+	  ]
 	},
 	{
 	  "id": 23,
@@ -814,10 +748,7 @@
 			"money": -5
 		  }
 		}
-	  ],
-	  "info": "Reimbursement policy changes employee commuting incentives. Supporting public transport lowers average commute emissions, while fuel reimbursement can encourage solo driving.",
-	  "best_choice": "A",
-	  "best_reason": "Public-transport reimbursement gives the best environmental outcome."
+	  ]
 	},
 	{
 	  "id": 24,
@@ -857,10 +788,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Product returns create reverse logistics, extra handling, and sometimes waste. Preventing returns at the source through better quality is usually stronger than only discouraging returns later.",
-	  "best_choice": "D",
-	  "best_reason": "Improving product quality prevents returns at the source and has the highest environmental score."
+	  ]
 	},
 	{
 	  "id": 25,
@@ -872,7 +800,7 @@
 		  "id": "A",
 		  "text": "Always use video",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": -10
 		  }
 		},
@@ -888,14 +816,11 @@
 		  "id": "C",
 		  "text": "Use audio-only meetings by default",
 		  "impact": {
-			"environment": 10,
+			"environment": 15,
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Video meetings use more data transfer and device energy than audio-only meetings. Using video only when needed is balanced; audio-by-default minimizes data transfer.",
-	  "best_choice": "C",
-	  "best_reason": "Audio-only by default has the best environmental score."
+	  ]
 	},
 	{
 	  "id": 26,
@@ -935,10 +860,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Profitability pressure can affect long-term sustainability investments. Cutting sustainability may improve short-term money but lock in high-impact operations, while efficiency can help both dimensions.",
-	  "best_choice": "C",
-	  "best_reason": "Improving efficiency gives a strong environmental benefit while also improving money."
+	  ]
 	},
 	{
 	  "id": 27,
@@ -950,7 +872,7 @@
 		  "id": "A",
 		  "text": "Frequent updates, always using the latest versions",
 		  "impact": {
-			"environment": -5,
+			"environment": 0,
 			"money": -10
 		  }
 		},
@@ -958,7 +880,7 @@
 		  "id": "B",
 		  "text": "Balanced update cycle",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -966,14 +888,11 @@
 		  "id": "C",
 		  "text": "Rare updates",
 		  "impact": {
-			"environment": -5,
+			"environment": 10,
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Software update policy has a trade-off: very frequent updates create testing and deployment churn, while rare updates can preserve inefficient or insecure systems. A balanced cycle avoids both extremes.",
-	  "best_choice": "B",
-	  "best_reason": "A balanced update cycle is the best environmental choice here."
+	  ]
 	},
 	{
 	  "id": 28,
@@ -1005,10 +924,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "Logs create storage and processing demand. Keeping all logs indefinitely grows footprint, while filtering and compression reduce data at the source.",
-	  "best_choice": "C",
-	  "best_reason": "Intelligent filtering and compression best reduce log volume."
+	  ]
 	},
 	{
 	  "id": 29,
@@ -1040,10 +956,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Device lifecycle matters because manufacturing dominates digital hardware footprint. Longer lifetimes reduce annualized impact and avoid unnecessary new devices.",
-	  "best_choice": "C",
-	  "best_reason": "Extending lifecycle with maintenance is the strongest environmental choice."
+	  ]
 	},
 	{
 	  "id": 30,
@@ -1075,10 +988,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "API design affects network payload size and compute processing. Large payloads waste bandwidth and server work; lightweight APIs reduce transfer and processing needs.",
-	  "best_choice": "C",
-	  "best_reason": "Highly optimized lightweight APIs give the best environmental score."
+	  ]
 	},
 	{
 	  "id": 31,
@@ -1098,7 +1008,7 @@
 		  "id": "B",
 		  "text": "Scheduled environments with on and off periods",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1110,10 +1020,7 @@
 			"money": 10
 		  }
 		}
-	  ],
-	  "info": "Development and testing environments can waste large amounts of idle compute. Scheduling helps, but on-demand environments minimize unused server hours.",
-	  "best_choice": "C",
-	  "best_reason": "On-demand environments minimize idle compute and score best."
+	  ]
 	},
 	{
 	  "id": 32,
@@ -1133,7 +1040,7 @@
 		  "id": "B",
 		  "text": "Improve insulation",
 		  "impact": {
-			"environment": 10,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1145,10 +1052,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Office cooling and heating depend on building demand and active energy use. Insulation reduces demand, while smart controls optimize usage over time.",
-	  "best_choice": "C",
-	  "best_reason": "Smart climate control systems score best in this model."
+	  ]
 	},
 	{
 	  "id": 33,
@@ -1168,7 +1072,7 @@
 		  "id": "B",
 		  "text": "Optimize with compression and caching",
 		  "impact": {
-			"environment": 10,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1180,10 +1084,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Unnecessary data traffic wastes network, server, and client resources. Compression and caching help, while redesigning the system can reduce transfer at the source.",
-	  "best_choice": "C",
-	  "best_reason": "Redesigning to minimize data transfer has the strongest environmental score."
+	  ]
 	},
 	{
 	  "id": 34,
@@ -1195,7 +1096,7 @@
 		  "id": "A",
 		  "text": "Allow employees to bring their own devices",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 10
 		  }
 		},
@@ -1203,7 +1104,7 @@
 		  "id": "B",
 		  "text": "Provide only company-managed devices",
 		  "impact": {
-			"environment": -5,
+			"environment": 0,
 			"money": -10
 		  }
 		},
@@ -1211,14 +1112,11 @@
 		  "id": "C",
 		  "text": "Adopt a controlled hybrid policy",
 		  "impact": {
-			"environment": 10,
+			"environment": 15,
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "BYOD can reduce duplicate devices, but unmanaged personal-device use creates security and governance issues. A controlled hybrid policy balances device reduction and manageability.",
-	  "best_choice": "C",
-	  "best_reason": "A controlled hybrid policy is the best balance for environmental impact."
+	  ]
 	},
 	{
 	  "id": 35,
@@ -1238,7 +1136,7 @@
 		  "id": "B",
 		  "text": "Ban external AI tools",
 		  "impact": {
-			"environment": 10,
+			"environment": 15,
 			"money": 10
 		  }
 		},
@@ -1250,10 +1148,7 @@
 			"money": 0
 		  }
 		}
-	  ],
-	  "info": "AI governance controls compute demand and data risk. Unrestricted external AI can lead to uncontrolled use; banning minimizes AI compute but may reduce productivity; approved internal tools depend on deployment.",
-	  "best_choice": "B",
-	  "best_reason": "Banning external AI has the highest environmental score, though it may not be best for productivity."
+	  ]
 	},
 	{
 	  "id": 36,
@@ -1285,10 +1180,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Green software training can improve long-term energy efficiency by changing how software is designed and operated. Optional training helps; mandatory training creates systematic change.",
-	  "best_choice": "C",
-	  "best_reason": "Mandatory training creates the strongest long-term improvement."
+	  ]
 	},
 	{
 	  "id": 37,
@@ -1300,7 +1192,7 @@
 		  "id": "A",
 		  "text": "Use many external APIs",
 		  "impact": {
-			"environment": -10,
+			"environment": -15,
 			"money": 10
 		  }
 		},
@@ -1308,7 +1200,7 @@
 		  "id": "B",
 		  "text": "Limit API usage",
 		  "impact": {
-			"environment": 5,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1316,14 +1208,11 @@
 		  "id": "C",
 		  "text": "Replace critical APIs with internal solutions",
 		  "impact": {
-			"environment": 10,
+			"environment": 15,
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "External APIs can increase data movement, dependency overhead, and duplicated processing. Limiting calls helps; internalizing critical APIs can reduce repeated calls but may add infrastructure.",
-	  "best_choice": "C",
-	  "best_reason": "Replacing critical APIs with internal solutions has the highest environmental score in this model."
+	  ]
 	},
 	{
 	  "id": 38,
@@ -1343,7 +1232,7 @@
 		  "id": "B",
 		  "text": "Extend product lifespan",
 		  "impact": {
-			"environment": 10,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1363,10 +1252,7 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Frequent product replacement creates waste and manufacturing impact. Longer life, repairable design, and repair/refurbishment reduce demand for new production.",
-	  "best_choice": "C",
-	  "best_reason": "Designing products for repair ties environmentally with repair services, but avoids extra service cost in this game."
+	  ]
 	},
 	{
 	  "id": 39,
@@ -1386,7 +1272,7 @@
 		  "id": "B",
 		  "text": "Gradually refactor key systems",
 		  "impact": {
-			"environment": 10,
+			"environment": 0,
 			"money": 0
 		  }
 		},
@@ -1398,181 +1284,58 @@
 			"money": -10
 		  }
 		}
-	  ],
-	  "info": "Technical debt can make systems inefficient and hard to maintain. Refactoring and modernization can reduce wasted compute, storage, and operational inefficiency.",
-	  "best_choice": "C",
-	  "best_reason": "Full modernization has the strongest environmental improvement in this model."
-	}
-  ],
-  "events": [
-	{
-	  "id": "cyberattack",
-	  "category": "IT",
-	  "title": "Cyberattack",
-	  "type": "flag",
-	  "flag": "cyberattack_risk",
-	  "outcomes": [
-		{
-		  "value": "low",
-		  "text": "A cyberattack targets your company, but your security systems detect it early because you invested in good cybersecurity. The attack is stopped before it causes serious damage. Score change: Environment 0, Money 0.",
-		  "impact": {
-			"environment": 0,
-			"money": 0
-		  }
-		},
-		{
-		  "value": "medium",
-		  "text": "A cyberattack hits your company and disrupts several systems before being stopped. No major data is lost, but recovery work increases energy use and slows operations, causing a financial loss. Score change: Environment -5, Money -10.",
-		  "impact": {
-			"environment": -5,
-			"money": -10
-		  }
-		},
-		{
-		  "value": "high",
-		  "text": "A cyberattack spreads across your systems without being detected in time because you did not invest enough in cybersecurity. Recovery requires extra IT work, system rebuilding, and emergency operations, causing major financial damage. Score change: Environment -10, Money -25.",
-		  "impact": {
-			"environment": -10,
-			"money": -25
-		  }
-		}
-	  ]
-	},
-	{
-	  "id": "packaging_backlash",
-	  "category": "Operations",
-	  "title": "Packaging Backlash",
-	  "type": "answer",
-	  "question_id": 1,
-	  "outcomes": [
-		{
-		  "value": "C",
-		  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact. Score change: Environment 0, Money 0.",
-		  "impact": {
-			"environment": 0,
-			"money": 0
-		  }
-		},
-		{
-		  "value": "B",
-		  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible, so the company faces moderate criticism and loses some revenue. Score change: Environment 0, Money -8.",
-		  "impact": {
-			"environment": 0,
-			"money": -8
-		  }
-		},
-		{
-		  "value": "A",
-		  "text": "Customers strongly criticize your packaging choices, especially because of heavy plastic use. Complaints spread, customer satisfaction drops, and the extra packaging waste creates an additional environmental penalty. Score change: Environment -5, Money -18.",
-		  "impact": {
-			"environment": -5,
-			"money": -18
-		  }
-		}
-	  ]
-	},
-	{
-	  "id": "media_scandal",
-	  "category": "General",
-	  "title": "Media Scandal",
-	  "type": "multi_answer_score",
-	  "question_ids": [
-		10,
-		14,
-		16,
-		38
-	  ],
-	  "good_choices": {
-		"10": [
-          "B"
-		],
-		"14": [
-		  "B",
-          "C"
-		],
-		"16": [
-		  "B",
-          "C"
-		],
-		"38": [
-		  "B",
-		  "C",
-          "D"
-		]
-	  },
-	  "bad_choices": {
-		"10": [
-          "A"
-		],
-		"14": [
-          "A"
-		],
-		"16": [
-          "A"
-		],
-		"38": [
-          "A"
-		]
-	  },
-	  "outcomes": [
-		{
-		  "value": "good",
-		  "text": "A journalist investigation reviews your company’s environmental practices. Because you invested in sustainable solutions and made responsible choices, the report highlights your efforts and trust is maintained. Score change: Environment 0, Money 0.",
-		  "impact": {
-			"environment": 0,
-			"money": 0
-		  }
-		},
-		{
-		  "value": "medium",
-		  "text": "A media report exposes some environmental weaknesses in your operations. You followed some sustainable practices, but remaining issues attract criticism and slightly damage the company’s reputation. Score change: Environment 0, Money -12.",
-		  "impact": {
-			"environment": 0,
-			"money": -12
-		  }
-		},
-		{
-		  "value": "bad",
-		  "text": "A major media scandal breaks out after your company is exposed for poor environmental practices, such as cheap suppliers, high-emission choices, or wasteful product decisions. Public trust drops sharply and the company suffers both reputational and environmental penalties. Score change: Environment -5, Money -25.",
-		  "impact": {
-			"environment": -5,
-			"money": -25
-		  }
-		}
-	  ]
-	},
-	{
-	  "id": "data_loss_incident",
-	  "category": "IT",
-	  "title": "Data Loss Incident",
-	  "type": "answer",
-	  "question_id": 20,
-	  "outcomes": [
-		{
-		  "value": "A",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow fast and complete restoration, so the incident has no lasting consequences. Score change: Environment 0, Money 0.",
-		  "impact": {
-			"environment": 0,
-			"money": 0
-		  }
-		},
-		{
-		  "value": "B",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered, causing minor disruption and extra work, but no direct environmental penalty. Score change: Environment 0, Money -10.",
-		  "impact": {
-			"environment": 0,
-			"money": -10
-		  }
-		},
-		{
-		  "value": "C",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Due to weak backup practices, critical data is lost permanently, forcing duplicate work, recovery operations, and significant financial losses. Score change: Environment -5, Money -25.",
-		  "impact": {
-			"environment": -5,
-			"money": -25
-		  }
-		}
 	  ]
 	}
   ]
+  ,
+"events": [
+  {
+	"id": "cyberattack",
+	"category": "IT",
+	"title": "Cyberattack",
+	"type": "flag",
+	"flag": "cyberattack_risk",
+	"outcomes": [
+	  {
+		"value": "low",
+		"text":" A cyberattack targets your company, but your security systems detect it early since you invested in good cybersecurity. ",
+		"impact": { "environment": 0, "money": 0 }
+	  },
+	  {
+		"value": "medium",
+		"text": "A cyberattack hits your company and manages to disrupt several systems before being stopped.. No major data is lost, but the incident slows down operations and you loose some money.",
+		"impact": { "environment": 0, "money": -10 }
+	  },
+	  {
+		"value": "high",
+		"text": "A cyberattack spreads across your systems without being detected in time since you didn’t invest in cybersecurity. The company struggles to recover, leading financial damage",
+		"impact": { "environment": 0, "money": -25 }
+	  }
+	]
+  },
+  {
+  "id": "packaging_backlash",
+  "category": "Operations",
+  "title": "Packaging Backlash",
+  "type": "answer",
+  "question_id": 1,
+  "outcomes": [
+	{
+	  "value": "C",
+	  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact.",
+	  "impact": { "environment": 0, "money": 0 }
+	},
+	{
+	  "value": "B",
+	  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible. The company faces moderate criticism.",
+	  "impact": { "environment": 0, "money": -8 }
+	},
+	{
+	  "value": "A",
+	  "text": "Customers strongly criticize your packaging choices, especially due to heavy use of plastic. Complaints spread and customer satisfaction drops, leading to lost revenue.",
+	  "impact": { "environment": -5, "money": -18 }
+	}
+  ]
+}
+]
 }
