@@ -38,7 +38,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Packaging impact depends on both material type and total waste volume. Plastic-heavy packaging tends to create higher end-of-life impact, recyclable materials improve recovery, and minimal packaging avoids material use at the source.",
+	  "best_choice": "C",
+	  "best_reason": "Minimal packaging is best because avoiding material use usually beats only changing the material."
 	},
 	{
 	  "id": 2,
@@ -70,7 +73,10 @@
 			"money": -3
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Cloud impact depends on electricity mix, data-center efficiency, cooling, and utilization. A cheap provider is not necessarily low-carbon, while renewable-powered infrastructure can significantly reduce footprint.",
+	  "best_choice": "B",
+	  "best_reason": "A renewable-energy provider has the strongest environmental score in this scenario."
 	},
 	{
 	  "id": 3,
@@ -102,7 +108,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Factory location affects both production electricity and logistics distance. Production in a lower-carbon electricity system and closer market can reduce emissions compared with distant high-carbon manufacturing.",
+	  "best_choice": "A",
+	  "best_reason": "France is treated as the lowest-carbon location among the options in this model."
 	},
 	{
 	  "id": 4,
@@ -134,7 +143,10 @@
 			"money": -5
 		  }
 		}
-	  ]
+	  ],
+	  "info": "AI systems can require significant compute. Impact depends on model size, usage volume, hardware utilization, and whether the workload is optimized locally or run through general cloud services.",
+	  "best_choice": "B",
+	  "best_reason": "Running optimized AI locally scores best here because it reduces overuse of high-impact cloud compute."
 	},
 	{
 	  "id": 5,
@@ -166,7 +178,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Freight emissions vary strongly by mode. Rail generally emits much less per tonne-kilometre than road freight, while trucks are more flexible but more carbon-intensive.",
+	  "best_choice": "B",
+	  "best_reason": "Using trains when possible gives the strongest environmental improvement."
 	},
 	{
 	  "id": 6,
@@ -198,7 +213,10 @@
 			"money": -15
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Data-center cooling can be a major energy driver. Liquid cooling can improve efficiency, and recovering waste heat creates an additional circular benefit by reusing heat that would otherwise be lost.",
+	  "best_choice": "C",
+	  "best_reason": "Liquid cooling with waste-heat recovery gives the highest environmental score."
 	},
 	{
 	  "id": 7,
@@ -230,7 +248,10 @@
 			"money": -3
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Infrastructure expansion has both embodied and operational impact. Building a private data center can create large construction and utilization impacts, while shared infrastructure may improve hardware utilization.",
+	  "best_choice": "C",
+	  "best_reason": "The smaller local provider is slightly positive in this model, assuming efficient/local operation."
 	},
 	{
 	  "id": 8,
@@ -262,7 +283,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Work policy affects commuting and office energy. Remote work can reduce commuting emissions, but home-energy rebound effects should still be considered.",
+	  "best_choice": "C",
+	  "best_reason": "Fully remote work scores best when commuting and office-space use are actually reduced."
 	},
 	{
 	  "id": 9,
@@ -294,7 +318,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Digital device footprint is dominated by manufacturing. Extending device life and buying refurbished equipment avoids much of the impact from producing new hardware.",
+	  "best_choice": "C",
+	  "best_reason": "Refurbished devices score best because they avoid most new manufacturing impact."
 	},
 	{
 	  "id": 10,
@@ -326,7 +353,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Energy supplier choice changes electricity carbon intensity. Renewable electricity is the strongest option, mixed energy is neutral, and cheap unspecified energy may rely on higher-carbon sources.",
+	  "best_choice": "B",
+	  "best_reason": "Renewable energy has the best environmental score."
 	},
 	{
 	  "id": 11,
@@ -367,7 +397,10 @@
 			"cyberattack_risk": "low"
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Cybersecurity has a small operational footprint, but weak security can create incidents with financial and operational damage. Advanced security adds some compute/storage overhead in this model.",
+	  "best_choice": "A",
+	  "best_reason": "Minimal and standard security are tied environmentally; A is marked best only by environmental score, though it increases cyberattack risk."
 	},
 	{
 	  "id": 12,
@@ -404,7 +437,10 @@
 			"money": -15
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Incident response can require extra recovery activity and infrastructure use. Slow restoration has little direct environmental effect but can hurt the business financially.",
+	  "best_choice": "B",
+	  "best_reason": "Slow restoration has the best direct environmental score, although it may not be the best business decision."
 	},
 	{
 	  "id": 13,
@@ -436,7 +472,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Stored data has an ongoing footprint because storage infrastructure consumes energy and hardware. Deleting unused data avoids storage demand; cold archive is better than keeping everything online.",
+	  "best_choice": "B",
+	  "best_reason": "Deleting old unused data has the highest environmental score."
 	},
 	{
 	  "id": 14,
@@ -468,7 +507,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Supplier choice affects upstream production footprint. A cheap but polluting supplier shifts environmental impact into the supply chain; sustainable procurement reduces that footprint.",
+	  "best_choice": "B",
+	  "best_reason": "Choosing the sustainable supplier gives the highest environmental score."
 	},
 	{
 	  "id": 15,
@@ -492,7 +534,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Office location affects commuting. City-center locations often support public transport and shorter trips, while suburban locations can increase car dependence.",
+	  "best_choice": "A",
+	  "best_reason": "The city-center office is better because it supports lower-carbon commuting."
 	},
 	{
 	  "id": 16,
@@ -524,7 +569,10 @@
 			"money": -5
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Marketing campaigns have material and distribution impacts. Mass printed flyers create paper, ink, and logistics footprint; digital communication avoids most physical material use.",
+	  "best_choice": "C",
+	  "best_reason": "A limited eco-designed print campaign combined with digital communication gives the best score."
 	},
 	{
 	  "id": 17,
@@ -556,7 +604,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Idle devices waste electricity outside working hours. Reminders help, but automatic shutdown is more reliable because it reduces dependency on individual behavior.",
+	  "best_choice": "C",
+	  "best_reason": "Automatic shutdown systems provide the strongest reliable reduction."
 	},
 	{
 	  "id": 18,
@@ -588,7 +639,10 @@
 			"money": 15
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Printing uses paper, ink, hardware, and energy. Duplex black-and-white printing reduces material use, while digital internal documents avoid most printing entirely.",
+	  "best_choice": "C",
+	  "best_reason": "Digital documents for internal meetings best avoid printing impact."
 	},
 	{
 	  "id": 19,
@@ -620,7 +674,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Software architecture affects server utilization and operational overhead. Microservices can add network and orchestration overhead; serverless can reduce idle capacity when well designed.",
+	  "best_choice": "C",
+	  "best_reason": "Serverless architecture scores best environmentally in this model."
 	},
 	{
 	  "id": 20,
@@ -652,7 +709,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Backup strategy balances resilience with storage and transfer footprint. Continuous backups duplicate more data, while weekly backups reduce footprint but increase data-loss risk.",
+	  "best_choice": "C",
+	  "best_reason": "Weekly backups use the least backup storage and transfer in the environmental model."
 	},
 	{
 	  "id": 21,
@@ -692,7 +752,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Heating strategy affects building energy demand. Lower heating and reduced office use save energy; insulation and smart systems can create durable savings but require investment.",
+	  "best_choice": "C",
+	  "best_reason": "Reducing office usage and relying more on remote work ties environmentally with building improvements but costs less in this game."
 	},
 	{
 	  "id": 22,
@@ -716,7 +779,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Cycling support can shift commutes toward near-zero direct-emission transport. Doing nothing preserves existing commuting patterns.",
+	  "best_choice": "A",
+	  "best_reason": "A bike bonus can produce a strong positive commuting modal shift."
 	},
 	{
 	  "id": 23,
@@ -748,7 +814,10 @@
 			"money": -5
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Reimbursement policy changes employee commuting incentives. Supporting public transport lowers average commute emissions, while fuel reimbursement can encourage solo driving.",
+	  "best_choice": "A",
+	  "best_reason": "Public-transport reimbursement gives the best environmental outcome."
 	},
 	{
 	  "id": 24,
@@ -788,7 +857,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Product returns create reverse logistics, extra handling, and sometimes waste. Preventing returns at the source through better quality is usually stronger than only discouraging returns later.",
+	  "best_choice": "D",
+	  "best_reason": "Improving product quality prevents returns at the source and has the highest environmental score."
 	},
 	{
 	  "id": 25,
@@ -820,7 +892,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Video meetings use more data transfer and device energy than audio-only meetings. Using video only when needed is balanced; audio-by-default minimizes data transfer.",
+	  "best_choice": "C",
+	  "best_reason": "Audio-only by default has the best environmental score."
 	},
 	{
 	  "id": 26,
@@ -860,7 +935,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Profitability pressure can affect long-term sustainability investments. Cutting sustainability may improve short-term money but lock in high-impact operations, while efficiency can help both dimensions.",
+	  "best_choice": "C",
+	  "best_reason": "Improving efficiency gives a strong environmental benefit while also improving money."
 	},
 	{
 	  "id": 27,
@@ -892,7 +970,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Software update policy has a trade-off: very frequent updates create testing and deployment churn, while rare updates can preserve inefficient or insecure systems. A balanced cycle avoids both extremes.",
+	  "best_choice": "B",
+	  "best_reason": "A balanced update cycle is the best environmental choice here."
 	},
 	{
 	  "id": 28,
@@ -924,7 +1005,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Logs create storage and processing demand. Keeping all logs indefinitely grows footprint, while filtering and compression reduce data at the source.",
+	  "best_choice": "C",
+	  "best_reason": "Intelligent filtering and compression best reduce log volume."
 	},
 	{
 	  "id": 29,
@@ -956,7 +1040,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Device lifecycle matters because manufacturing dominates digital hardware footprint. Longer lifetimes reduce annualized impact and avoid unnecessary new devices.",
+	  "best_choice": "C",
+	  "best_reason": "Extending lifecycle with maintenance is the strongest environmental choice."
 	},
 	{
 	  "id": 30,
@@ -988,7 +1075,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "API design affects network payload size and compute processing. Large payloads waste bandwidth and server work; lightweight APIs reduce transfer and processing needs.",
+	  "best_choice": "C",
+	  "best_reason": "Highly optimized lightweight APIs give the best environmental score."
 	},
 	{
 	  "id": 31,
@@ -1020,7 +1110,10 @@
 			"money": 10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Development and testing environments can waste large amounts of idle compute. Scheduling helps, but on-demand environments minimize unused server hours.",
+	  "best_choice": "C",
+	  "best_reason": "On-demand environments minimize idle compute and score best."
 	},
 	{
 	  "id": 32,
@@ -1052,7 +1145,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Office cooling and heating depend on building demand and active energy use. Insulation reduces demand, while smart controls optimize usage over time.",
+	  "best_choice": "C",
+	  "best_reason": "Smart climate control systems score best in this model."
 	},
 	{
 	  "id": 33,
@@ -1084,7 +1180,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Unnecessary data traffic wastes network, server, and client resources. Compression and caching help, while redesigning the system can reduce transfer at the source.",
+	  "best_choice": "C",
+	  "best_reason": "Redesigning to minimize data transfer has the strongest environmental score."
 	},
 	{
 	  "id": 34,
@@ -1116,7 +1215,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "BYOD can reduce duplicate devices, but unmanaged personal-device use creates security and governance issues. A controlled hybrid policy balances device reduction and manageability.",
+	  "best_choice": "C",
+	  "best_reason": "A controlled hybrid policy is the best balance for environmental impact."
 	},
 	{
 	  "id": 35,
@@ -1148,7 +1250,10 @@
 			"money": 0
 		  }
 		}
-	  ]
+	  ],
+	  "info": "AI governance controls compute demand and data risk. Unrestricted external AI can lead to uncontrolled use; banning minimizes AI compute but may reduce productivity; approved internal tools depend on deployment.",
+	  "best_choice": "B",
+	  "best_reason": "Banning external AI has the highest environmental score, though it may not be best for productivity."
 	},
 	{
 	  "id": 36,
@@ -1180,7 +1285,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Green software training can improve long-term energy efficiency by changing how software is designed and operated. Optional training helps; mandatory training creates systematic change.",
+	  "best_choice": "C",
+	  "best_reason": "Mandatory training creates the strongest long-term improvement."
 	},
 	{
 	  "id": 37,
@@ -1212,7 +1320,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "External APIs can increase data movement, dependency overhead, and duplicated processing. Limiting calls helps; internalizing critical APIs can reduce repeated calls but may add infrastructure.",
+	  "best_choice": "C",
+	  "best_reason": "Replacing critical APIs with internal solutions has the highest environmental score in this model."
 	},
 	{
 	  "id": 38,
@@ -1252,7 +1363,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Frequent product replacement creates waste and manufacturing impact. Longer life, repairable design, and repair/refurbishment reduce demand for new production.",
+	  "best_choice": "C",
+	  "best_reason": "Designing products for repair ties environmentally with repair services, but avoids extra service cost in this game."
 	},
 	{
 	  "id": 39,
@@ -1284,7 +1398,10 @@
 			"money": -10
 		  }
 		}
-	  ]
+	  ],
+	  "info": "Technical debt can make systems inefficient and hard to maintain. Refactoring and modernization can reduce wasted compute, storage, and operational inefficiency.",
+	  "best_choice": "C",
+	  "best_reason": "Full modernization has the strongest environmental improvement in this model."
 	}
   ],
   "events": [
