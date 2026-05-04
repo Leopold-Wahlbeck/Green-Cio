@@ -871,4 +871,4 @@ func are_all_categories_completed() -> bool:
 
 
 func go_to_win_scene() -> void:
-	get_tree().change_scene_to_file("res://scenes/WinningScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/winningscreen.tscn")
