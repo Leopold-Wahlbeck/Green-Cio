@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://brtfhn7ttq08k" path="res://assets/images/main_background_v2.png" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://m34fjjcramd3" path="res://scripts/Main.gd" id="3_script"]
-[ext_resource type="FontFile" uid="uid://c042li8xx2r6" path="res://assets/fonts/Minecraft.ttf" id="3_sugp2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
 content_margin_left = 18.0
@@ -17,6 +16,10 @@ corner_radius_bottom_left = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
 bg_color = Color(0, 0.72813743, 0.05580779, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="main" type="Control" unique_id=1379461960]
 layout_mode = 3
@@ -217,7 +220,6 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_sugp2")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_sugp2")
 text = "?"
