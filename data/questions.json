@@ -1414,7 +1414,7 @@
 	  "outcomes": [
 		{
 		  "value": "low",
-		  "text": " A cyberattack targets your company, but your security systems detect it early since you invested in good cybersecurity. ",
+		  "text": "A cyberattack targets your company, but your security systems detect it early because you invested in good cybersecurity. The attack is stopped before it causes serious damage. Score change: Environment 0, Money 0.",
 		  "impact": {
 			"environment": 0,
 			"money": 0
@@ -1422,17 +1422,17 @@
 		},
 		{
 		  "value": "medium",
-		  "text": "A cyberattack hits your company and manages to disrupt several systems before being stopped.. No major data is lost, but the incident slows down operations and you loose some money.",
+		  "text": "A cyberattack hits your company and disrupts several systems before being stopped. No major data is lost, but recovery work increases energy use and slows operations, causing a financial loss. Score change: Environment -5, Money -10.",
 		  "impact": {
-			"environment": 0,
+			"environment": -5,
 			"money": -10
 		  }
 		},
 		{
 		  "value": "high",
-		  "text": "A cyberattack spreads across your systems without being detected in time since you didn’t invest in cybersecurity. The company struggles to recover, leading financial damage",
+		  "text": "A cyberattack spreads across your systems without being detected in time because you did not invest enough in cybersecurity. Recovery requires extra IT work, system rebuilding, and emergency operations, causing major financial damage. Score change: Environment -10, Money -25.",
 		  "impact": {
-			"environment": 0,
+			"environment": -10,
 			"money": -25
 		  }
 		}
@@ -1447,7 +1447,7 @@
 	  "outcomes": [
 		{
 		  "value": "C",
-		  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact.",
+		  "text": "Customers raise concerns about packaging waste, but since you already use minimal packaging, your company is praised for its efforts and avoids negative impact. Score change: Environment 0, Money 0.",
 		  "impact": {
 			"environment": 0,
 			"money": 0
@@ -1455,7 +1455,7 @@
 		},
 		{
 		  "value": "B",
-		  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible. The company faces moderate criticism.",
+		  "text": "Customers complain about packaging waste. While you switched to recyclable materials, some issues remain visible, so the company faces moderate criticism and loses some revenue. Score change: Environment 0, Money -8.",
 		  "impact": {
 			"environment": 0,
 			"money": -8
@@ -1463,7 +1463,7 @@
 		},
 		{
 		  "value": "A",
-		  "text": "Customers strongly criticize your packaging choices, especially due to heavy use of plastic. Complaints spread and customer satisfaction drops, leading to lost revenue.",
+		  "text": "Customers strongly criticize your packaging choices, especially because of heavy plastic use. Complaints spread, customer satisfaction drops, and the extra packaging waste creates an additional environmental penalty. Score change: Environment -5, Money -18.",
 		  "impact": {
 			"environment": -5,
 			"money": -18
@@ -1517,7 +1517,7 @@
 	  "outcomes": [
 		{
 		  "value": "good",
-		  "text": "A journalist investigation reveals your company’s environmental practices, but since you invested in sustainable solutions and made responsible choices, the report highlights your efforts. The company’s image remains strong and trust is maintained.",
+		  "text": "A journalist investigation reviews your company’s environmental practices. Because you invested in sustainable solutions and made responsible choices, the report highlights your efforts and trust is maintained. Score change: Environment 0, Money 0.",
 		  "impact": {
 			"environment": 0,
 			"money": 0
@@ -1525,7 +1525,7 @@
 		},
 		{
 		  "value": "medium",
-		  "text": "A media report exposes some environmental weaknesses in your operations. While you followed some sustainable practices, there are still issues that attract criticism. The company’s reputation is slightly affected.",
+		  "text": "A media report exposes some environmental weaknesses in your operations. You followed some sustainable practices, but remaining issues attract criticism and slightly damage the company’s reputation. Score change: Environment 0, Money -12.",
 		  "impact": {
 			"environment": 0,
 			"money": -12
@@ -1533,7 +1533,7 @@
 		},
 		{
 		  "value": "bad",
-		  "text": "A major media scandal breaks out after your company is exposed for poor environmental practices, especially due to earlier decisions like cheap suppliers or high-emission choices. Public trust drops sharply, customers react negatively.",
+		  "text": "A major media scandal breaks out after your company is exposed for poor environmental practices, such as cheap suppliers, high-emission choices, or wasteful product decisions. Public trust drops sharply and the company suffers both reputational and environmental penalties. Score change: Environment -5, Money -25.",
 		  "impact": {
 			"environment": -5,
 			"money": -25
@@ -1550,7 +1550,7 @@
 	  "outcomes": [
 		{
 		  "value": "A",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow for a fast and complete restoration of all lost data. The incident has no lasting consequences.",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Your continuous backup systems allow fast and complete restoration, so the incident has no lasting consequences. Score change: Environment 0, Money 0.",
 		  "impact": {
 			"environment": 0,
 			"money": 0
@@ -1558,7 +1558,7 @@
 		},
 		{
 		  "value": "B",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered. Some information is permanently lost, causing minor disruptions and additional work.",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Only part of the data can be recovered, causing minor disruption and extra work, but no direct environmental penalty. Score change: Environment 0, Money -10.",
 		  "impact": {
 			"environment": 0,
 			"money": -10
@@ -1566,18 +1566,13 @@
 		},
 		{
 		  "value": "C",
-		  "text": "An internal error or technical failure leads to the loss of important company data. Due to poor backup practices, critical data is lost permanently. This affects operations, decision-making, and customer trust, leading to significant losses.",
+		  "text": "An internal error or technical failure leads to the loss of important company data. Due to weak backup practices, critical data is lost permanently, forcing duplicate work, recovery operations, and significant financial losses. Score change: Environment -5, Money -25.",
 		  "impact": {
-			"environment": 0,
+			"environment": -5,
 			"money": -25
 		  }
 		}
 	  ]
 	}
-  ],
-  "metadata": {
-	"version": "green-cio-questions-with-info-v1",
-	"best_choice_rule": "Best choice is the highest environmental score from the data notes. If tied, the option with better budget impact was selected.",
-	"info_source_summary": "Info fields are based on the uploaded Data scores PDF methodology: Resilio DB for digital/IT proxies and ADEME/Impact CO2/circular-economy logic for non-digital proxies."
-  }
+  ]
 }
