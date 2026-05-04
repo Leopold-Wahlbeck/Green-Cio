@@ -418,7 +418,6 @@ func save_current_session() -> void:
 		return
 
 	category_sessions[selected_category] = {
-		"game_state": GameState.get_snapshot(),
 		"remaining_questions": remaining_questions.duplicate(true),
 		"pending_triggered_questions": pending_triggered_questions.duplicate(true),
 		"current_question": current_question.duplicate(true),
@@ -435,18 +434,20 @@ func save_current_session() -> void:
 func restore_category_session(category_name: String) -> bool:
 	if not category_sessions.has(category_name):
 		return false
+
 	var session: Dictionary = category_sessions[category_name]
-	GameState.restore_snapshot(session.get("game_state", {}))
+
 	remaining_questions = session.get("remaining_questions", []).duplicate(true)
 	pending_triggered_questions = session.get("pending_triggered_questions", []).duplicate(true)
-
 	pending_events = session.get("pending_events", []).duplicate(true)
-
 	current_question = session.get("current_question", {}).duplicate(true)
+
 	feedback_label.text = str(session.get("feedback_text", ""))
 	next_button.visible = bool(session.get("next_visible", false))
 	next_button.text = str(session.get("next_text", "Next"))
 	is_showing_end_screen = bool(session.get("is_showing_end_screen", false))
+	shown_event_ids = session.get("shown_event_ids", {}).duplicate(true)
+
 	update_score_labels()
 
 	if is_showing_end_screen:
