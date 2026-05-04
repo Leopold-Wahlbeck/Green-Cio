@@ -38,6 +38,7 @@ const EVENT_BG_NEUTRAL := preload("res://assets/images/Event_Outcome.png")
 	"IT": $IntroLayer/ITButton,
 	"Operations": $IntroLayer/OperationsButton,
 }
+@onready var info_button: Button = $ScreenArea/infobutton
 
 @onready var event_popup_layer: Control = $EventPopupLayer
 @onready var event_card: TextureRect = $EventPopupLayer/EventCard
@@ -60,6 +61,9 @@ var all_events: Array[Dictionary] = []
 var pending_events: Array[Dictionary] = []
 var queued_event: Dictionary = {}
 var queued_event_question: Dictionary = {}
+var shown_event_ids := {}
+var selected_choice_index := -1
+var selected_choice: Dictionary = {}
 
 
 func _ready() -> void:
@@ -73,6 +77,10 @@ func _ready() -> void:
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	back_button.pressed.connect(_on_back_button_pressed)
 	back_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
+	info_button.pressed.connect(_on_info_button_pressed)
+	info_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
 	next_button.pressed.connect(_on_next_button_pressed)
 	resized.connect(_update_background_layout)
 	load_questions()
@@ -123,6 +131,8 @@ func load_questions() -> void:
 
 
 func show_intro_screen() -> void:
+	reset_text_styles()
+
 	if not selected_category.is_empty():
 		save_current_session()
 
@@ -134,6 +144,7 @@ func show_intro_screen() -> void:
 	background.texture = INTRO_BACKGROUND
 	intro_layer.visible = true
 	screen_area.visible = false
+	info_button.visible = false
 	update_score_labels()
 	_update_background_layout()
 
@@ -198,12 +209,22 @@ func load_next_question() -> void:
 
 
 func display_question(question: Dictionary) -> void:
+
+	reset_text_styles()
+
+	title_label.visible = true
+	category_label.visible = true
+	round_label.visible = true
+	description_label.visible = true
+	feedback_label.visible = true
+
 	title_label.text = str(question.get("title", "Question"))
 	category_label.text = "Category: %s" % question.get("category", "General")
 	round_label.text = "Question %d / %d" % [GameState.round_number + 1, GameState.max_rounds]
 	description_label.text = str(question.get("question", ""))
 	feedback_label.text = ""
 	next_button.visible = false
+	info_button.visible = str(question.get("info", "")).strip_edges() != ""
 
 	var choices: Array = question.get("choices", [])
 
@@ -224,6 +245,9 @@ func display_question(question: Dictionary) -> void:
 		round_label.text = "Event"
 	else:
 		round_label.text = "Question %d / %d" % [GameState.round_number + 1, GameState.max_rounds]
+		
+	selected_choice_index = -1
+	selected_choice = {}
 
 
 func _on_choice_pressed(index: int) -> void:
@@ -234,23 +258,14 @@ func _on_choice_pressed(index: int) -> void:
 	if index >= choices.size():
 		return
 
-	var choice: Dictionary = choices[index]
-	var impact: Dictionary = choice.get("impact", {})
+	selected_choice_index = index
+	selected_choice = choices[index]
+
+	var impact: Dictionary = selected_choice.get("impact", {})
 	var environment_change := int(impact.get("environment", 0))
 	var money_change := int(impact.get("money", 0))
 
-	GameState.apply_choice(
-		environment_change,
-		money_change,
-		int(current_question.get("id")),
-		choice
-	)
-	unlock_triggered_questions(current_question, choice)
-	update_score_labels()
-
-	for button in choice_buttons:
-		button.disabled = true
-
+	# Visa preview (men ändra INTE GameState)
 	feedback_label.text = "Impact: environment %s%d | budget %s%d" % [
 		format_signed_value(environment_change),
 		abs(environment_change),
@@ -258,10 +273,17 @@ func _on_choice_pressed(index: int) -> void:
 		abs(money_change),
 	]
 
+	for i in range(choice_buttons.size()):
+		var button := choice_buttons[i]
+		if i < choices.size():
+			var choice: Dictionary = choices[i]
+			if i == selected_choice_index:
+				button.text = "✓ %s. %s" % [choice.get("id", ""), choice.get("text", "")]
+			else:
+				button.text = "%s. %s" % [choice.get("id", ""), choice.get("text", "")]
+
 	next_button.text = "View results" if remaining_questions.is_empty() else "Next"
 	next_button.visible = true
-	save_current_session()
-
 
 func unlock_triggered_questions(answered_question: Dictionary, selected_choice: Dictionary) -> void:
 	for index in range(pending_triggered_questions.size() - 1, -1, -1):
@@ -302,6 +324,7 @@ func show_end_screen() -> void:
 	back_button.visible = true
 	next_button.text = "Replay category"
 	next_button.visible = true
+	info_button.visible = false
 	update_score_labels()
 	save_current_session()
 
@@ -321,10 +344,15 @@ func show_loading_error(message: String) -> void:
 		button.visible = false
 	back_button.visible = true
 	next_button.visible = false
+	info_button.visible = false
 	update_score_labels()
 
 
 func _on_next_button_pressed() -> void:
+
+	if current_question.is_empty() and title_label.text.to_lower() == "game over":
+		reset_full_game()
+		return
 
 	if int(current_question.get("id", 0)) < 0:
 		current_question = {}
@@ -341,6 +369,29 @@ func _on_next_button_pressed() -> void:
 			return
 		start_category_game(selected_category)
 		return
+		
+	if not selected_choice.is_empty():
+		var impact: Dictionary = selected_choice.get("impact", {})
+		var environment_change := int(impact.get("environment", 0))
+		var money_change := int(impact.get("money", 0))
+
+		GameState.apply_choice(
+			environment_change,
+			money_change,
+			int(current_question.get("id")),
+			selected_choice
+		)
+
+		update_score_labels()
+
+		if check_game_over():
+			return
+
+		unlock_triggered_questions(current_question, selected_choice)
+
+		selected_choice_index = -1
+		selected_choice = {}
+	
 	load_next_question()
 
 
@@ -408,7 +459,6 @@ func save_current_session() -> void:
 		return
 
 	category_sessions[selected_category] = {
-		"game_state": GameState.get_snapshot(),
 		"remaining_questions": remaining_questions.duplicate(true),
 		"pending_triggered_questions": pending_triggered_questions.duplicate(true),
 		"current_question": current_question.duplicate(true),
@@ -418,6 +468,7 @@ func save_current_session() -> void:
 		"buttons_locked": are_choice_buttons_locked(),
 		"is_showing_end_screen": is_showing_end_screen,
 		"pending_events": pending_events.duplicate(true),
+		"shown_event_ids": shown_event_ids.duplicate(true),
 	}
 
 
@@ -426,17 +477,18 @@ func restore_category_session(category_name: String) -> bool:
 		return false
 
 	var session: Dictionary = category_sessions[category_name]
-	GameState.restore_snapshot(session.get("game_state", {}))
+
 	remaining_questions = session.get("remaining_questions", []).duplicate(true)
 	pending_triggered_questions = session.get("pending_triggered_questions", []).duplicate(true)
-
 	pending_events = session.get("pending_events", []).duplicate(true)
-
 	current_question = session.get("current_question", {}).duplicate(true)
+
 	feedback_label.text = str(session.get("feedback_text", ""))
 	next_button.visible = bool(session.get("next_visible", false))
 	next_button.text = str(session.get("next_text", "Next"))
 	is_showing_end_screen = bool(session.get("is_showing_end_screen", false))
+	shown_event_ids = session.get("shown_event_ids", {}).duplicate(true)
+
 	update_score_labels()
 
 	if is_showing_end_screen:
@@ -531,6 +583,41 @@ func build_event_question(event: Dictionary) -> Dictionary:
 				money = int(outcome.get("impact", {}).get("money", 0))
 				break
 
+	elif event.get("type") == "multi_answer_score":
+		var question_ids: Array = event.get("question_ids", [])
+		var good_choices: Dictionary = event.get("good_choices", {})
+		var bad_choices: Dictionary = event.get("bad_choices", {})
+
+		var good_count := 0
+		var bad_count := 0
+
+		for question_id in question_ids:
+			var qid := int(question_id)
+			var answer := str(GameState.answers.get(qid, ""))
+			var qid_key := str(qid)
+
+			var good_for_question: Array = good_choices.get(qid_key, [])
+			var bad_for_question: Array = bad_choices.get(qid_key, [])
+
+			if good_for_question.has(answer):
+				good_count += 1
+			elif bad_for_question.has(answer):
+				bad_count += 1
+
+		var result_value := "medium"
+
+		if good_count >= 3 and bad_count == 0:
+			result_value = "good"
+		elif bad_count >= 2:
+			result_value = "bad"
+
+		for outcome in event.get("outcomes", []):
+			if str(outcome.get("value", "")) == result_value:
+				result_text = str(outcome.get("text", ""))
+				env = int(outcome.get("impact", {}).get("environment", 0))
+				money = int(outcome.get("impact", {}).get("money", 0))
+				break
+
 	if result_text.is_empty():
 		return {}
 
@@ -593,6 +680,7 @@ func try_show_queued_event_on_intro() -> void:
 func try_show_event_popup_on_intro() -> void:
 	for i in range(pending_events.size() - 1, -1, -1):
 		var event: Dictionary = pending_events[i]
+		var event_id := str(event.get("id", ""))
 
 		if event.get("type") == "flag":
 			var flag := str(event.get("flag", ""))
@@ -603,12 +691,27 @@ func try_show_event_popup_on_intro() -> void:
 			var question_id := int(event.get("question_id", -1))
 			if not GameState.answers.has(question_id):
 				continue
+		
+		if event.get("type") == "multi_answer_score":
+			var question_ids: Array = event.get("question_ids", [])
+			var all_answered := true
+
+			for question_id in question_ids:
+				if not GameState.answers.has(int(question_id)):
+					all_answered = false
+					break
+
+			if not all_answered:
+				continue
 
 		queued_event_question = build_event_question(event)
 
 		if queued_event_question.is_empty():
 			continue
+		if shown_event_ids.has(event_id):
+			continue
 
+		shown_event_ids[event_id] = true
 		pending_events.remove_at(i)
 		show_sudden_event_dialog(queued_event_question)
 		save_current_session()
@@ -670,4 +773,97 @@ func apply_event_impact(event_question: Dictionary) -> void:
 		money_change,
 		int(event_question.get("id", -1000)),
 		choice
+	)
+	update_score_labels()
+	check_game_over()
+
+func check_game_over() -> bool:
+	if GameState.economy_score <= 0:
+		GameState.economy_score = 0
+		show_game_over_screen("Budget depleted", "Your budget reached 0 money-points.")
+		return true
+
+	if GameState.environment_score <= 0:
+		GameState.environment_score = 0
+		show_game_over_screen("Environment depleted", "Your environment score reached 0 points.")
+		return true
+
+	return false
+
+func show_game_over_screen(reason: String, message: String) -> void:
+	current_question = {}
+	is_showing_end_screen = false
+
+	title_label.text = "Game Over"
+	category_label.text = reason
+	round_label.text = "Simulation failed"
+
+	description_label.text = "%s\n\nThe organization can no longer continue with this plan." % message
+
+	feedback_label.text = "Reset the game and try to keep both environment and budget above 0."
+
+	title_label.add_theme_color_override("font_color", Color.RED)
+	category_label.add_theme_color_override("font_color", Color(0.8, 0.0, 0.0))
+	round_label.add_theme_color_override("font_color", Color(0.8, 0.0, 0.0))
+	description_label.add_theme_color_override("font_color", Color(0.5, 0.0, 0.0))
+	feedback_label.add_theme_color_override("font_color", Color(0.5, 0.0, 0.0))
+
+	for button in choice_buttons:
+		button.visible = false
+
+	back_button.visible = false
+	next_button.text = "Reset game"
+	next_button.visible = true
+
+	update_score_labels()
+	save_current_session()
+
+func reset_full_game() -> void:
+	category_sessions.clear()
+	selected_category = ""
+	current_question = {}
+	remaining_questions.clear()
+	pending_triggered_questions.clear()
+	pending_events.clear()
+	shown_event_ids.clear()
+	selected_choice_index = -1
+	selected_choice = {}
+
+	reset_text_styles()
+
+	GameState.reset_game()
+	update_score_labels()
+	show_intro_screen()
+
+func reset_text_styles() -> void:
+	title_label.add_theme_color_override("font_color", Color.BLACK)
+	category_label.add_theme_color_override("font_color", Color.BLACK)
+	round_label.add_theme_color_override("font_color", Color.BLACK)
+	description_label.add_theme_color_override("font_color", Color.BLACK)
+	feedback_label.add_theme_color_override("font_color", Color.BLACK)
+	
+
+func _on_info_button_pressed() -> void:
+	if current_question.is_empty():
+		return
+
+	var info_text := str(current_question.get("info", "")).strip_edges()
+
+	if info_text.is_empty():
+		return
+
+	var dialog := AcceptDialog.new()
+	dialog.title = "Information"
+	dialog.dialog_text = "%s\n\n%s" % [
+		str(current_question.get("title", "Question")),
+		info_text
+	]
+
+	dialog.min_size = Vector2(700, 400)
+	dialog.exclusive = true
+
+	add_child(dialog)
+	dialog.popup_centered()
+	dialog.confirmed.connect(func():
+		dialog.queue_free()
 	)

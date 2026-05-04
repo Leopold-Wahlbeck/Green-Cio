@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b05txtfqtv7d0"]
+[gd_scene format=3 uid="uid://sa51towe3e76"]
 
-[ext_resource type="Script" uid="uid://b5xxjygfpe33g" path="res://scripts/introscript.gd" id="1_6tor5"]
+[ext_resource type="Script" path="res://scripts/introscript.gd" id="1_6tor5"]
 [ext_resource type="Texture2D" uid="uid://cjy2527isxebq" path="res://assets/images/introscenebackground.png" id="1_g6t57"]
 [ext_resource type="FontFile" uid="uid://c042li8xx2r6" path="res://assets/fonts/Minecraft.ttf" id="2_3uwhn"]
 [ext_resource type="Texture2D" uid="uid://5jt2icbd1mnt" path="res://assets/images/chatbouble.png" id="3_6tor5"]
