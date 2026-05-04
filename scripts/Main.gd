@@ -309,7 +309,7 @@ func show_end_screen() -> void:
 	for button in choice_buttons:
 		button.visible = false
 	back_button.visible = true
-	next_button.text = "Replay category"
+	next_button.text = "Back to main screen"
 	next_button.visible = true
 	info_button.visible = false
 	update_score_labels()
@@ -350,9 +350,9 @@ func _on_next_button_pressed() -> void:
 		if selected_category.is_empty():
 			show_intro_screen()
 			return
+			
 		if is_showing_end_screen:
-			category_sessions.erase(selected_category)
-			start_category_game(selected_category)
+			show_intro_screen()
 			return
 		start_category_game(selected_category)
 		return
