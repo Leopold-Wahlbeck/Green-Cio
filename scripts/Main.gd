@@ -113,6 +113,8 @@ func load_questions() -> void:
 
 
 func show_intro_screen() -> void:
+	reset_text_styles()
+
 	if not selected_category.is_empty():
 		save_current_session()
 
@@ -188,6 +190,15 @@ func load_next_question() -> void:
 
 
 func display_question(question: Dictionary) -> void:
+
+	reset_text_styles()
+
+	title_label.visible = true
+	category_label.visible = true
+	round_label.visible = true
+	description_label.visible = true
+	feedback_label.visible = true
+
 	title_label.text = str(question.get("title", "Question"))
 	category_label.text = "Category: %s" % question.get("category", "General")
 	round_label.text = "Question %d / %d" % [GameState.round_number + 1, GameState.max_rounds]
@@ -317,6 +328,10 @@ func show_loading_error(message: String) -> void:
 
 func _on_next_button_pressed() -> void:
 
+	if current_question.is_empty() and title_label.text.to_lower() == "game over":
+		reset_full_game()
+		return
+
 	if int(current_question.get("id", 0)) < 0:
 		current_question = {}
 		show_intro_screen()
@@ -345,8 +360,12 @@ func _on_next_button_pressed() -> void:
 			selected_choice
 		)
 
-		unlock_triggered_questions(current_question, selected_choice)
 		update_score_labels()
+
+		if check_game_over():
+			return
+
+		unlock_triggered_questions(current_question, selected_choice)
 
 		selected_choice_index = -1
 		selected_choice = {}
@@ -713,3 +732,64 @@ func apply_event_impact(event_question: Dictionary) -> void:
 		int(event_question.get("id", -1000)),
 		choice
 	)
+	update_score_labels()
+	check_game_over()
+
+func check_game_over() -> bool:
+	if GameState.economy_score <= 0:
+		show_game_over_screen()
+		return true
+
+	return false
+
+func show_game_over_screen() -> void:
+	current_question = {}
+	is_showing_end_screen = false
+
+	title_label.text = "Game Over"
+	category_label.text = "Budget depleted"
+	round_label.text = "You went under budget"
+
+	description_label.text = "Your budget reached 0 money-points.\n\nThe organization can no longer continue with this plan."
+
+	feedback_label.text = "Try again and make choices that keep the budget above 0."
+
+	title_label.add_theme_color_override("font_color", Color.RED)
+	category_label.add_theme_color_override("font_color", Color(0.8, 0.0, 0.0))
+	round_label.add_theme_color_override("font_color", Color(0.8, 0.0, 0.0))
+	description_label.add_theme_color_override("font_color", Color(0.5, 0.0, 0.0))
+	feedback_label.add_theme_color_override("font_color", Color(0.5, 0.0, 0.0))
+
+	for button in choice_buttons:
+		button.visible = false
+
+	back_button.visible = false
+	next_button.text = "Reset game"
+	next_button.visible = true
+
+	update_score_labels()
+	save_current_session()
+
+func reset_full_game() -> void:
+	category_sessions.clear()
+	selected_category = ""
+	current_question = {}
+	remaining_questions.clear()
+	pending_triggered_questions.clear()
+	pending_events.clear()
+	shown_event_ids.clear()
+	selected_choice_index = -1
+	selected_choice = {}
+
+	reset_text_styles()
+
+	GameState.reset_game()
+	update_score_labels()
+	show_intro_screen()
+
+func reset_text_styles() -> void:
+	title_label.add_theme_color_override("font_color", Color.BLACK)
+	category_label.add_theme_color_override("font_color", Color.BLACK)
+	round_label.add_theme_color_override("font_color", Color.BLACK)
+	description_label.add_theme_color_override("font_color", Color.BLACK)
+	feedback_label.add_theme_color_override("font_color", Color.BLACK)
