@@ -146,6 +146,14 @@ func start_category_game(category_name: String) -> void:
 	base_questions = filter_questions_for_category(all_base_questions, category_name)
 	triggered_questions = filter_questions_for_category(all_triggered_questions, category_name)
 
+	base_questions.sort_custom(func(a, b):
+		return int(a.get("id", 0)) < int(b.get("id", 0))
+	)
+
+	triggered_questions.sort_custom(func(a, b):
+		return int(a.get("id", 0)) < int(b.get("id", 0))
+	)
+
 	if base_questions.is_empty():
 		show_loading_error("No questions were found for the %s category." % category_name)
 		return
@@ -286,7 +294,9 @@ func unlock_triggered_questions(answered_question: Dictionary, selected_choice: 
 				GameState.max_rounds += 1
 			pending_triggered_questions.remove_at(index)
 
-	remaining_questions.shuffle()
+	remaining_questions.sort_custom(func(a, b):
+		return int(a.get("id", 0)) < int(b.get("id", 0))
+	)
 
 
 func update_score_labels() -> void:
