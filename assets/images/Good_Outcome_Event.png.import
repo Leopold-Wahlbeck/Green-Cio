@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bifn56sq7gona"
-path="res://.godot/imported/Good_Outcome _Event.png-cac874dfa92287af80ca349beac1b361.ctex"
+path="res://.godot/imported/Good_Outcome_Event.png-fdfbcaf35f2884614a43a74cf5feb759.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Good_Outcome _Event.png"
-dest_files=["res://.godot/imported/Good_Outcome _Event.png-cac874dfa92287af80ca349beac1b361.ctex"]
+source_file="res://assets/images/Good_Outcome_Event.png"
+dest_files=["res://.godot/imported/Good_Outcome_Event.png-fdfbcaf35f2884614a43a74cf5feb759.ctex"]
 
 [params]
 
