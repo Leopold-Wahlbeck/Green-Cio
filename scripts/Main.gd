@@ -275,9 +275,7 @@ func _on_choice_pressed(index: int) -> void:
 	var money_change := int(impact.get("money", 0))
 
 	# Visa preview (men ändra INTE GameState)
-	feedback_label.text = "Impact: environment %s%d | budget %s%d" % [
-		format_signed_value(environment_change),
-		abs(environment_change),
+	feedback_label.text = "Budget impact: %s%d" % [
 		format_signed_value(money_change),
 		abs(money_change),
 	]
